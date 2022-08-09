@@ -1,3 +1,4 @@
-button.red {
-  background-color: red;
+.customButton {
+  background-color: var(--background-color);
+  padding: 16px 8px;
 }

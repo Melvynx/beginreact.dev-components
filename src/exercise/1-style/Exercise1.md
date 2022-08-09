@@ -30,6 +30,8 @@ Tu peux avoir la maquette ici. Utilise la propriété `style` pour définir un s
 
 https://www.figma.com/file/pvwkLh3ucG3tDvyYCraB0e/BeginReact.dev?node-id=5%3A923
 
+Instruction dans le fichier de l'exercise.
+
 PS : les boutons on un style par défaut dans le fichier `index.css`, on change juste le background-color ici.
 
 ### Problème
@@ -43,59 +45,26 @@ PS : les boutons on un style par défaut dans le fichier `index.css`, on change 
 
 On va crée des styles globals.
 
-Tu peux allé dans le fichier `global.css` et crée les styles :
-`button.red {...}` etc..
+Tu peux allé dans le fichier `global.css` et voir qu'il existe déjà un style pour `.customButton`.
 
 Pour que les styles fonctionne, il va falloir importé le fichier `global.css` dans le fichier `Exercise1.js`.
 
 `import "./global.css";`
 
-Vue que c'est des classes global, tu n'as qu'à rajouté le nom des classes dans les buttons
-comme tu l'aurais fais habituellement.
+Pour t'apprendre une technique tu retrouvera dans le fichier `global.css` une css variable.
+C'est `var(--background-color)`. On va passé par le tag `style` pour définir la css variable.
+
+Je te laisse essayer de trouver le moyen de faire ça et je t'explique tout dans la solution.
 
 ### Problème
 
-- toutes l'application va avoir ce style (si un autre button dans l'application a la class "red", c'est le style qui sera appliqué)
+- toutes l'application va avoir ce style (si un autre button dans l'application a la class `customButton`, c'est le style qui sera appliqué)
   - avec plus de 100 components je peux te dire que les styles globaux vont devenir un joyeux bordel
 - il faut chercher ou les styles ont été définit
 
 **Modifie notre button avec des globals styles.**
 
-## Exercise 3 - Styled-components : css-in-js
-
-[Styled-components](https://styled-components.com/docs/basics) est une library React pour faire des styles.
-
-Elle fait ses styles directement dans le JS.
-
-Elle va générer des classes name unique pour nos composant. Cette library va nous permettre
-de faire des styles, gérer les variants, le thème etc...
-
-J'en aborde le sujet dans la formation **pour que tu sache que ça existe.**
-
-On ne va pas aborder toute la puissance de ce genre de library mais c'est très utilisé
-dans l'industrie.
-
-#### Usage
-
-```jsx
-const Button = styled.button({
-  // en utilisant une fonction tu va pouvoir définir des styles conditionnellement
-  // ici avec un block
-  backgroundColor: (props) => {
-    if (props.variant === 'red') return 'red';
-    else if (props.variant === 'green') return 'green';
-    else return 'white';
-  },
-  color: 'white',
-  // ici j'utilise un ternaire pour définir la largeur du bouton en fonction
-  // de la props "size"
-  padding: (props) => (props.size === 'sm' ? '8px 12px' : '16px 20px'),
-});
-```
-
-**Modifie notre button avec des styled-components.**
-
-## Exercise 4 - CSS Module
+## Exercise 3 - CSS Module
 
 C'est celui qu'on va utilisé dans le cadre de cette formation.
 
@@ -131,3 +100,37 @@ J'explique tout ça dans la correction.
 **Modifie notre button avec des css module.**
 
 le fichier existe déjà (`Exercise1.module.css`)
+
+## Exercise 4 - Styled-components : css-in-js
+
+[Styled-components](https://styled-components.com/docs/basics) est une library React pour faire des styles.
+
+Elle fait ses styles directement dans le JS.
+
+Elle va générer des classes name unique pour nos composant. Cette library va nous permettre
+de faire des styles, gérer les variants, le thème etc...
+
+J'en aborde le sujet dans la formation **pour que tu sache que ça existe.**
+
+On ne va pas aborder toute la puissance de ce genre de library mais c'est très utilisé
+dans l'industrie.
+
+#### Usage
+
+```jsx
+const Button = styled.button({
+  // en utilisant une fonction tu va pouvoir définir des styles conditionnellement
+  // ici avec un block
+  backgroundColor: (props) => {
+    if (props.variant === 'red') return 'red';
+    else if (props.variant === 'green') return 'green';
+    else return 'white';
+  },
+  color: 'white',
+  // ici j'utilise un ternaire pour définir la largeur du bouton en fonction
+  // de la props "size"
+  padding: (props) => (props.size === 'sm' ? '8px 12px' : '16px 20px'),
+});
+```
+
+**Modifie notre button avec des styled-components.**

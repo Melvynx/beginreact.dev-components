@@ -1,12 +1,14 @@
+import styles from '../exercise/1-style/Exercise1.module.css';
+
 const VariantStyle = {
   primary: {
-    backgroundColor: 'red',
+    ['--background-color']: 'red',
   },
   secondary: {
-    backgroundColor: 'blue',
+    ['--background-color']: 'blue',
   },
   default: {
-    backgroundColor: 'gray',
+    ['--background-color']: 'gray',
   },
 };
 
@@ -14,17 +16,11 @@ const Button = ({ variant, children }) => {
   const variantStyle = VariantStyle[variant];
 
   return (
-    <button
-      style={{
-        padding: '8px 16px',
-        ...variantStyle,
-      }}
-    >
+    <button className={styles.button} style={variantStyle}>
       {children}
     </button>
   );
 };
-
 const Styles = () => {
   return (
     <div>
