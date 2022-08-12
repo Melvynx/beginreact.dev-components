@@ -42,7 +42,6 @@ const Demo = () => {
   return (
     <div>
       <h2>Without key</h2>
-      {/* 2 column by 2 rows */}
       <div
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '4px' }}
       >
@@ -50,18 +49,16 @@ const Demo = () => {
           // eslint-disable-next-line react/jsx-key
           <Item vegetable={item} />
         ))}
-      </div>{' '}
+      </div>
       <h2>With key index</h2>
-      {/* 2 column by 2 rows */}
       <div
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '4px' }}
       >
         {items.map((item, index) => (
           <Item key={index} vegetable={item} />
         ))}
-      </div>{' '}
+      </div>
       <h2>With unique key</h2>
-      {/* 2 column by 2 rows */}
       <div
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '4px' }}
       >
