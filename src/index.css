@@ -104,3 +104,9 @@ input:focus-visible {
   flex-direction: column;
   gap: 4px;
 }
+
+.router-exercise {
+  font-size: 1.5em;
+  margin: 16px 0;
+  text-decoration: underline;
+}

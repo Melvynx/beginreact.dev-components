@@ -1,4 +1,4 @@
-import styles from '../../styles/Exercise2.module.css';
+import styles from '../styles/Exercise2.module.css';
 
 const ShoppingListData = [
   { id: 1, name: 'Milk', quantity: 2, checked: false },

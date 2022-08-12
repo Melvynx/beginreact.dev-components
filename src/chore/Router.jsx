@@ -43,7 +43,9 @@ const Exercise = ({ data }) => {
     <div>
       <h1>{data.name}</h1>
       <div className="nav-list">
-        <Link to={`/${data.name}/exercise`}>Exercise</Link>
+        <Link className="router-exercise" to={`/${data.name}/exercise`}>
+          Exercise
+        </Link>
         {data.parts.solutions.map((_, i) => (
           <Link key={i} to={`/${data.name}/solution/${i + 1}`}>
             Solution {i + 1}
@@ -57,7 +59,7 @@ const Exercise = ({ data }) => {
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <h1>BeginReact - Les composants</h1>
       <div className="nav-list">
         {EXERCISES.map((exercise, i) => (
           <Link key={i} to={`/${exercise.name}`}>
@@ -65,6 +67,12 @@ const Home = () => {
           </Link>
         ))}
       </div>
+      <p>
+        Les liens te permettent de te repérer dans les exercises.
+        <br />
+        Si tu es perdu ou tu as des problèmes, rejoins le discord et n'hésite pas à
+        demander de l'aide.
+      </p>
     </div>
   );
 };

@@ -1,3 +1,8 @@
+/**
+ * DO NOT UPDATE
+ * This is the exercise objets that will be used to create the exercises.
+ */
+
 import Styles from '../exercise/1-style/Exercise1';
 import ShoppingList from '../exercise/2-list/Exercise2';
 import Form from '../exercise/3-form/Exercise3';

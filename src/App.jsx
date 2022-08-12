@@ -1,5 +1,9 @@
+/**
+ * DO NOT UPDATE
+ * This is the main entry point of the application.
+ */
+
 import { BrowserRouter } from 'react-router-dom';
-import './App.css';
 import { Router } from './chore/Router';
 
 const App = () => {
