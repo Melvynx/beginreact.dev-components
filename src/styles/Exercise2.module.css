@@ -2,18 +2,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 32px;
+  padding: 16px;
   gap: 10px;
 
-  background: #333333;
+  background: var(--paper);
   border-radius: 16px;
   width: 300px;
+}
+
+.shopping-list h2 {
+  margin: 8px 0 16px 0;
 }
 
 .shopping-list-items {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
   width: 100%;
 }
 
@@ -24,8 +28,7 @@
   align-items: center;
   padding: 4px 8px;
 
-  background: #242424;
-  width: 100%;
+  background: var(--bg-color);
   border-radius: 8px;
 }
 
@@ -47,5 +50,4 @@
 
 .shopping-item p {
   font-size: 1rem;
-  color: #ffffff;
 }

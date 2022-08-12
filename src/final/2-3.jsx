@@ -40,7 +40,7 @@ const ShoppingList = () => {
           setItems([
             ...items,
             {
-              id: items[items.length].id + 1,
+              id: items.length > 0 ? items[items.length - 1].id + 1 : 0,
               name: ItemsToAdd[Math.floor(Math.random() * ItemsToAdd.length)],
               quantity: Math.round(Math.random() * 100),
               checked: false,

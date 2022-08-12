@@ -40,15 +40,61 @@ la liste de course et je souhaite que tu crée une belle interface pour l'affich
 
 ## Exercise 2 - Conditional Rendering
 
-Dans `ShoppingItem` j'aimerais bien que si la quantités est égal à 0 : 
+Il y a 3 moyens d'afficher du contenue conditionnellement.
+
+1. `if... else...`
+
+```jsx
+const App = (props) => {
+  if (props.isLoading) {
+    return <div>Loading...</div>;
+  } else {
+    return <div>{props.children}</div>;
+  }
+};
+```
+
+2. `&&`
+
+```jsx
+const App = (props) => {
+  return (
+    <div>
+      <p>Hello</p>
+      <p>{props.isLoading && 'Loading...'}</p>
+    </div>
+  );
+};
+```
+
+3. ternary operator
+
+[📖 doc](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+
+```jsx
+const App = (props) => {
+  return (
+    <div>
+      <p>Hello</p>
+      <p>{props.isLoading ? 'Loading...' : props.children}</p>
+    </div>
+  );
+};
+```
+
+A toi de jouer.
+
+Dans `ShoppingItem` j'aimerais bien que si la quantités est égal à 0 :
+
 - rien ne s'affiche
 
 Si la quantités est à 1 :
+
 - le badge n'est pas affiché
 
 ## Exercise 2 - Key
 
-Il n'y a rien à faire. 
+Il n'y a rien à faire.
 
 Regarde juste la solution et amuse toi avec en commentant / décommentant
 la props "key" dans la liste et regarde comment la checkbox réagis quand tu supprime des éléments.
