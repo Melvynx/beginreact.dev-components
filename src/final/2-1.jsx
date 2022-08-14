@@ -31,7 +31,7 @@ const ShoppingList = () => {
     <div className={styles['shopping-list']}>
       <h2>Shopping List</h2>
 
-      <div>
+      <div className={styles['shopping-list-items']}>
         {ShoppingListData.map((item) => (
           <ShoppingItem
             key={item.name}

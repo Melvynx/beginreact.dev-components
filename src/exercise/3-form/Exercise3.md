@@ -48,6 +48,9 @@ C'est quand tu définie une `value` à ton input. Dans ce cas tu dois gérer ent
 de l'input. Donc quand il change, tu dois écouter le `onChange` event et update
 la valeur de l'input en fonction.
 
+ℹ️ PS : Oui nous n'avons pas encore vue le useState, c'est une découverte à l'aveugle
+que je te propose ici.
+
 ```jsx
 const Input = () => {
   const [value, setValue] = useState(value);
