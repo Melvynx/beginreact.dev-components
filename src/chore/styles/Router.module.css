@@ -1,0 +1,10 @@
+.router {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.router > h1 {
+  font-weight: bold;
+}

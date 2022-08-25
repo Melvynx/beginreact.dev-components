@@ -8,7 +8,7 @@ const ShoppingListData = [
   { id: 5, name: 'Coffee', quantity: 1, checked: false },
   { id: 6, name: 'Tea', quantity: 1, checked: false },
   { id: 7, name: 'Cake', quantity: 1, checked: false },
-  { id: 8, name: 'Pie', quantity: 1, checked: false },
+  { id: 8, name: 'Pie', quantity: 0, checked: false },
   { id: 9, name: 'Chips', quantity: 3, checked: false },
 ];
 

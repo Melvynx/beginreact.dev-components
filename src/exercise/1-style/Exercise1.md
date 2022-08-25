@@ -2,15 +2,15 @@
 
 Pour une page web, il te faut des styles.
 
-Il y a de nombreuse façon de faire les styles en React et je vais toute te les
-faire testé.
+Il y a de nombreuses façons de faire les styles en React et je vais **t'en présenter 5.**
 
-PS : oui tu vas devoir update toujours le même fichier avec les mêmes styles.
-Mais les solutions sont la pour garder l'historique.
+PS : oui tu vas devoir update toujours le même fichier en modifiant
+les styles donc tu vas à chaque exercise devoir supprimer ce que tu as fait.
+Mais les solutions sont là pour garder l'historique.
 
 ## Exercise 1 - Plain style
 
-En react comme en HTML tu peux simplement utilisé la propriété `style` pour définir un style.
+En react comme en HTML tu peux simplement utiliser la propriété `style` pour définir un style.
 
 En HTML tu fais comme ça
 
@@ -24,56 +24,61 @@ Mais en JSX tu vas devoir faire comme ceci. Utilisé un object.
 <div style={{ color: 'red' }}>Hello</div>
 ```
 
-L'avantage c'est que ce sera typé.
+[📖 Doc React sur les styles](https://fr.reactjs.org/docs/dom-elements.html#style)
+
+L'avantage, c'est que ce sera typé.
 
 Tu peux avoir la maquette ici. Utilise la propriété `style` pour définir un style.
 
-https://www.figma.com/file/pvwkLh3ucG3tDvyYCraB0e/BeginReact.dev?node-id=5%3A923
-
 Instruction dans le fichier de l'exercise.
 
-PS : les boutons on un style par défaut dans le fichier `index.css`, on change juste le background-color ici.
+PS : les boutons ont un style par défaut dans le fichier `index.css`, on change juste le background-color ici.
+
+- 💌 Tu apprends à utiliser les inline style en React.
 
 ### Problème
 
 - duplication des styles
 - pas possible d'utiliser les pseudo-classes (hover)
 - pas possible d'utiliser les media queries
-- rend les fichiers moins lisible
+- rend les fichiers moins lisibles
 
 ## Exercise 2 - Global style
 
 On va crée des styles globals.
 
-Tu peux allé dans le fichier `global.css` et voir qu'il existe déjà un style pour `.customButton`.
+Tu peux aller dans le fichier `src/exercise/1-style/global.css` et voir qu'il existe déjà un style pour `.customButton`.
 
-Pour que les styles fonctionne, il va falloir importé le fichier `global.css` dans le fichier `Exercise1.js`.
+Pour que les styles fonctionne, il va falloir importer le fichier `global.css` dans le fichier `Exercise1.js`.
 
 `import "./global.css";`
 
-Pour t'apprendre une technique tu retrouvera dans le fichier `global.css` une css variable.
-C'est `var(--background-color)`. On va passé par le tag `style` pour définir la css variable.
+Pour t'apprendre une technique tu retrouveras dans le fichier `global.css` une css variable.
+C'est `var(--background-color)`. On va passer par le tag `style` pour définir la css variable.
 
 Je te laisse essayer de trouver le moyen de faire ça et je t'explique tout dans la solution.
 
+[📖 Doc React sur les ClassName](https://fr.reactjs.org/docs/faq-styling.html)
+
+**Modifie notre button avec des globaux styles.**
+
 ### Problème
 
-- toutes l'application va avoir ce style (si un autre button dans l'application a la class `customButton`, c'est le style qui sera appliqué)
+- toute l'application va avoir ce style (si un autre button dans l'application a la class `customButton`, c'est le style qui sera appliqué)
   - avec plus de 100 components je peux te dire que les styles globaux vont devenir un joyeux bordel
-- il faut chercher ou les styles ont été définit
+- il faut chercher ou les styles ont été définis
 
-**Modifie notre button avec des globals styles.**
+💌 Tu apprends à utiliser les globaux styles et tu comprends le problème.
 
 ## Exercise 3 - CSS Module
 
-C'est celui qu'on va utilisé dans le cadre de cette formation.
+C'est celui qu'on va utiliser dans le cadre de cette formation.
 
-Il combine global style et styled-components.
+C'est la même chose que les globaux styles dans l'aspect, mais ils sont "scopés" à ton composant.
+C'est-à-dire que la class `customButton` ne sera qu'accessible dans le fichier `Exercise1.jsx` ou
+tout autre fichier qui import le `Composant.module.css`.
 
-On va définir dans des fichier CSS des styles qui seront utilisé par nos composants
-localement.
-
-Le nommage est : `Composant.module.css`.
+Tu dois nommer tes fichiers CSS Module comme çA : `ComponentName.module.css`.
 
 Ensuite pour l'utiliser tu peux l'importer comme ceci :
 
@@ -82,7 +87,7 @@ Ensuite pour l'utiliser tu peux l'importer comme ceci :
 Dans le fichier tu pourras mettre par exemple :
 
 ```css
-.red {
+.button {
   background-color: red;
 }
 ```
@@ -93,29 +98,103 @@ Et tu pourras donc utiliser les styles comme ceci :
 <button className={styles.button}>Hello</button>
 ```
 
-L'avantage c'est que t'es styles sont **scopée** dans ton composants.
-
-J'explique tout ça dans la correction.
+J'explique les détails dans la correction.
 
 **Modifie notre button avec des css module.**
 
-le fichier existe déjà (`Exercise1.module.css`)
+Le fichier existe déjà (`Exercise1.module.css`)
 
-## Exercise 4 - Styled-components : css-in-js
+- 💌 Tu comprends comment fonctionne les CSS Module et leur utilité.
+
+## Exercise 4 - Tailwind CSS
+
+Tailwind est le framework populaire du moment. Dans le projet final de
+cette formation, on va l'utiliser pour notre projet.
+
+Il faut donc que tu saches le maîtriser.
+
+Avec Tailwind je vais te faire découvrir le lib incontournable : `clsx`.
+
+Déjà Tailwind est une library "Utility First". Elle offre des classes
+prédéfinit qui te permettre d'ajouter des styles sans passer par un fichier
+CSS. Directement dans le HTML.
+
+Tailwind possède un Playground ou tu peux t'amuser, je t'ai [préparé
+une démo](https://play.tailwindcss.com/ZtvTfomsMR) qui vient de [hyperui
+](https://www.hyperui.dev/components/marketing/buttons) qui est une library
+de composant pour Tailwind. Tu as juste à copier-coller le code HTML.
+
+Tailwind est très optimisé, c'est-à-dire qu'il va ajouter à ton Application
+**uniquement les classes que tu utilises dans ton app.**
+
+Par exemple si on a une app qui possède uniquement ce button :
+```html
+<button class="bg-red-500 p-2 rounded-lg text-white">Hello</button>
+```
+
+Tailwind va générer ce CSS : 
+```css
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+```
+
+**Et pas de CSS en plus inutile.**
+
+Pour faire notre bouton, n'oublie pas que tu dois ajouter le padding. Puis
+les couleurs en fonction de `variant`.
+
+[📖 Tailwind - bg-color](https://tailwindcss.com/docs/background-color)
+
+Ensuite la library [NPM clsx](https://www.npmjs.com/package/clsx) est juste 
+un utilitaire pour faire des className.
+
+Voici un petit exemple : 
+```jsx
+<button className={clsx("button", { ["red"]: true, ["blue"]: false })}>
+  Hello
+</button>
+// Equal
+<button className="button red">Hello</button>
+```
+
+Elle permet d'ajouter conditionnellement des classes CSS. Evident dans
+une application, ce ne sera pas `true` ou `false` mais une vraie condition
+comme 💡`variant === "primary"`.
+
+À toi de jouer !
+
+- 💌 Tu comprends comment fonctionne `Tailwind` et `clsx`
+
+## Exercise 5 - Styled-components : css-in-js
 
 [Styled-components](https://styled-components.com/docs/basics) est une library React pour faire des styles.
 
 Elle fait ses styles directement dans le JS.
 
-Elle va générer des classes name unique pour nos composant. Cette library va nous permettre
+Elle va générer des classes name unique pour nos composants. Cette library va nous permettre
 de faire des styles, gérer les variants, le thème etc...
 
-J'en aborde le sujet dans la formation **pour que tu sache que ça existe.**
+J'en aborde le sujet dans la formation **pour que tu saches que ça existe.**
 
 On ne va pas aborder toute la puissance de ce genre de library mais c'est très utilisé
 dans l'industrie.
 
-#### Usage
+### Usage
 
 ```jsx
 const Button = styled.button({
@@ -131,6 +210,17 @@ const Button = styled.button({
   // de la props "size"
   padding: (props) => (props.size === 'sm' ? '8px 12px' : '16px 20px'),
 });
+
+const Demo = () => {
+  return (
+    <div>
+      <Button variant="red" size="sm">Hello</Button>
+      <Button variant="green">Hello</Button>
+    </div>
+  );
+}
 ```
 
 **Modifie notre button avec des styled-components.**
+
+- 💌 Tu découvres le `CSS-in-JS` et tu sais qu'il existe.

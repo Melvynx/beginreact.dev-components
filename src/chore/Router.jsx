@@ -4,10 +4,12 @@
  * This file is created to make the exercises friendly. Any update can break the exercises.
  */
 
-import React from 'react';
-import { Route, Routes } from 'react-router';
-import { Link } from 'react-router-dom';
-import { EXERCISES } from './exercises';
+import React from "react";
+import { Navigate, Route, Routes } from "react-router";
+import { Link } from "react-router-dom";
+import { EXERCISES } from "./exercises";
+import { ExerciseProse } from "./ExerciseProse.jsx";
+import styles from "./styles/Router.module.css";
 
 export const Router = () => {
   return (
@@ -18,13 +20,33 @@ export const Router = () => {
           <Route
             key={exercise.name}
             path={`/${exercise.name}`}
-            element={<Exercise data={exercise} />}
+            element={<ExerciseRoutes data={exercise} />}
           />
-          <Route
-            key={exercise.name}
-            path={`/${exercise.name}/exercise`}
-            element={exercise.parts.exercise}
-          />
+
+          {exercise.parts.exercise ? (
+            <Route
+              key={exercise.name}
+              path={`/${exercise.name}/exercise`}
+              element={
+                <ExerciseProse markdownElement={exercise.parts.md}>
+                  {exercise.parts.exercise}
+                </ExerciseProse>
+              }
+            />
+          ) : (
+            exercise.parts.exercises.map((exercisePart, i) => (
+              <Route
+                key={`${exercise.name}-${i}`}
+                path={`/${exercise.name}/exercise/${i + 1}`}
+                element={
+                  <ExerciseProse markdownElement={exercise.parts.md}>
+                    {exercisePart}
+                  </ExerciseProse>
+                }
+              />
+            ))
+          )}
+
           {exercise.parts.solutions.map((solution, i) => (
             <Route
               key={`${exercise.name}-${i}`}
@@ -32,20 +54,37 @@ export const Router = () => {
               element={solution}
             />
           ))}
+
+          <Route
+            path={`/${exercise.name}/solution`}
+            element={<Navigate to={`/${exercise.name}`} replace={true} />}
+          />
         </React.Fragment>
       ))}
     </Routes>
   );
 };
 
-const Exercise = ({ data }) => {
+const ExerciseRoutes = ({ data }) => {
   return (
-    <div>
-      <h1>{data.name}</h1>
+    <div className={styles.router}>
+      <h1 className="work-sans">{data.name}</h1>
       <div className="nav-list">
-        <Link className="router-exercise" to={`/${data.name}/exercise`}>
-          Exercise
-        </Link>
+        {data.parts.exercise ? (
+          <Link className="router-exercise" to={`/${data.name}/exercise`}>
+            Exercise
+          </Link>
+        ) : (
+          data.parts.exercises.map((exercisePart, i) => (
+            <Link
+              className="router-exercise"
+              key={i}
+              to={`/${data.name}/exercise/${i + 1}`}
+            >
+              Exercise {i + 1}
+            </Link>
+          ))
+        )}
         {data.parts.solutions.map((_, i) => (
           <Link key={i} to={`/${data.name}/solution/${i + 1}`}>
             Solution {i + 1}
@@ -58,8 +97,8 @@ const Exercise = ({ data }) => {
 
 const Home = () => {
   return (
-    <div>
-      <h1>BeginReact - Les composants</h1>
+    <div className={styles.router}>
+      <h1 className="work-sans">BeginReact - Les hooks</h1>
       <div className="nav-list">
         {EXERCISES.map((exercise, i) => (
           <Link key={i} to={`/${exercise.name}`}>
@@ -70,8 +109,8 @@ const Home = () => {
       <p>
         Les liens te permettent de te repérer dans les exercises.
         <br />
-        Si tu es perdu ou tu as des problèmes, rejoins le discord et n'hésite pas à
-        demander de l'aide.
+        Si tu es perdu ou tu as des problèmes, rejoins le discord et n'hésite
+        pas à demander de l'aide.
       </p>
     </div>
   );

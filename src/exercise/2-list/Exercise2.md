@@ -1,4 +1,4 @@
-# Première List !
+# Première List !
 
 Dans une application, on a très souvent des listes de données qu'on a envies d'afficher.
 
@@ -31,16 +31,17 @@ const VegetablesList = () => {
 Je m'arrête ici pour la théorie. Dans la vidéo solution, je vais vraiment t'expliquer
 comment ce `map()` fonctionne.
 
+Dans le module 1, on avait vue que `React.createElement()` acceptait les tableaux.
+
 ## Exercise 1
 
-Premier petit exercise ou tu vas devoir crée une interface.
+J'ai une liste de course, mais elle ne s'affiche pas.
 
-Je te propose de crée une liste de course. Dans le fichier exercise tu trouveras
-la liste de course et je souhaite que tu crée une belle interface pour l'afficher.
+J'ai déjà fait le CSS, suit le Lienx 🦁pour résoudre le problème. 
 
 ## Exercise 2 - Conditional Rendering
 
-Il y a 3 moyens d'afficher du contenue conditionnellement.
+Il y a 3 moyens d'afficher du contenu conditionnellement.
 
 1. `if... else...`
 
@@ -84,26 +85,26 @@ const App = (props) => {
 
 A toi de jouer.
 
-Dans `ShoppingItem` j'aimerais bien que si la quantités est égal à 0 :
+Dans `ShoppingItem` j'aimerais bien que si la quantité est égal à 0 :
 
 - rien ne s'affiche
 
-Si la quantités est à 1 :
+Si la quantité est à 1 :
 
 - le badge n'est pas affiché
 
-## Exercise 2 - Key
+## Exercise 3 - Key
 
-Il n'y a rien à faire.
+**Il n'y a rien à faire.**
 
-Regarde juste la solution et amuse toi avec en commentant / décommentant
-la props "key" dans la liste et regarde comment la checkbox réagis quand tu supprime des éléments.
+Regarde juste la solution et amuse-toi avec en commentant / décommentant
+la props "key" dans la liste et regarde comment la checkbox réagis quand tu supprimes des éléments.
 
 Regarde la vidéo solution après avoir fait ceci.
 
-## Exercise 3 - Key
+## Exercise 4 - Key
 
-Il n'y a rien à faire.
+**Il n'y a rien à faire.**
 
 Regarde juste la solution et place ton curseur dans les inputs puis attend et regarde
-comment React gère ton curseur en fonction des différent input.
+comment React gère ton curseur en fonction des différents input.

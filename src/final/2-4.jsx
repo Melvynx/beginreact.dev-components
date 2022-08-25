@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const vegetables = ['carrot', 'tomato', 'cucumber', 'pepper'];
 
-const Item = ({ vegetable }) => <input value={vegetable} />;
+const Item = ({ item }) => <input value={item} />;
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -47,7 +47,7 @@ const Demo = () => {
       >
         {items.map((item) => (
           // eslint-disable-next-line react/jsx-key
-          <Item vegetable={item} />
+          <Item item={item} />
         ))}
       </div>
       <h2>With key index</h2>
@@ -55,7 +55,7 @@ const Demo = () => {
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '4px' }}
       >
         {items.map((item, index) => (
-          <Item key={index} vegetable={item} />
+          <Item key={index} item={item} />
         ))}
       </div>
       <h2>With unique key</h2>
@@ -63,7 +63,7 @@ const Demo = () => {
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '4px' }}
       >
         {items.map((item) => (
-          <Item key={item} vegetable={item} />
+          <Item key={item} item={item} />
         ))}
       </div>
     </div>

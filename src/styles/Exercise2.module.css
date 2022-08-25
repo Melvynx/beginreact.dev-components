@@ -4,6 +4,7 @@
   align-items: center;
   padding: 16px;
   gap: 10px;
+  margin: auto;
 
   background: var(--paper);
   border-radius: 16px;
@@ -40,7 +41,7 @@
   gap: 8px;
 }
 
-.shopping-item .badge {
+.badge {
   padding: 2px 8px;
   display: block;
 

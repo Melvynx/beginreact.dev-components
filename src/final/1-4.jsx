@@ -1,15 +1,16 @@
-import styled from 'styled-components';
+import clsx from "clsx";
 
-const Button = styled.button({
-  padding: '16px 8px',
-  backgroundColor: (props) => {
-    if (props.variant === 'primary') return 'red';
-
-    if (props.variant === 'secondary') return 'blue';
-
-    return 'gray';
-  },
-});
+const Button = ({ variant, children }) => {
+  return (
+    <button className={clsx("py-4 px-2", {
+      [`bg-red-600`]: variant === "primary",
+      [`bg-blue-600`]: variant === "secondary",
+      [`bg-gray-600`]: variant === "default",
+    })}>
+      {children}
+    </button>
+  );
+};
 
 const Styles = () => {
   return (
