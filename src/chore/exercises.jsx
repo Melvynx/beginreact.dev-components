@@ -29,6 +29,10 @@ import Solution3Exercise2 from "../solution/3-2";
 import Solution3Exercise3 from "../solution/3-3";
 import Solution3Exercise4 from "../solution/3-4";
 import Solution3Exercise5 from "../solution/3-5";
+// Exercise 4
+import Solution4Exercise1 from "../solution/4-1";
+import Solution4Exercise2 from "../solution/4-2";
+import Solution4Exercise3 from "../solution/4-3";
 
 export const EXERCISES = [
   {
@@ -77,7 +81,11 @@ export const EXERCISES = [
     parts: {
       exercise: <SplitComponent />,
       md: <SplitComponentMarkdown />,
-      solutions: [],
+      solutions: [
+        <Solution4Exercise1 key={1} />,
+        <Solution4Exercise2 key={1} />,
+        <Solution4Exercise3 key={1} />,
+      ],
     },
   },
 ];
