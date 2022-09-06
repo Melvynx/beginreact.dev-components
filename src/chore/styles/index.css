@@ -132,3 +132,14 @@ input:focus-visible {
   margin: 16px 0;
   text-decoration: underline;
 }
+
+.navigation-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.navigation-page > h1 {
+  font-weight: bold;
+}
