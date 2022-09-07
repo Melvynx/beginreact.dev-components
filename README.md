@@ -35,23 +35,23 @@ npm run dev
 
 Dans le dossier [src/exercise](src/exercise) tu trouveras un dossier par exercice.
 
-Dans chacun de ses exercises tu trouveras les fichiers suivants :
+Dans chacun de ces exercises tu trouveras les fichiers suivants :
 
-- `Exercise`: Le fichier où tu vas faire l'exercise. Tu trouveras à l'intérieur des indications
-  de nos émojis pour réaliser le premier exercise.
+- `Exercise`: Le fichier où tu vas faire l'exercice. Tu trouveras à l'intérieur des indications
+  de nos émojis pour réaliser le premier exercice.
 - `ExerciseN.md`: Le fichier de consigne. Si tu es sur VSCode je te conseille d'ouvrir le
   fichier `md` et faire `CMD + SHIFT + P` puis chercher "Open Markdown" et sélectionner le
   "Markdown : Open preview to the side" !
-  - Dans les fichiers Exercise il y a plusieurs exercise. Le premier exercise est l'exercise
-    principal, dans le fichier `Exercise.html` tu trouveras de l'aide pour le réalisé avec les émojis.
-  - Ensuite, il y a 1 à 6 autres exercises que tu vas réaliser seul.
+  - Dans les fichiers Exercise il y a plusieurs exercices. Le premier exercice est l'exercice
+    principal, dans le fichier `Exercise.html` tu trouveras de l'aide pour le réaliser avec les émojis.
+  - Ensuite, il y a 1 à 6 autres exercices que tu vas réaliser seul.
 
 ### Les Solutions
 
 Dans le dossier [src/solution](src/solution) il y a les fichiers solution pour chaque exercice et sous exercice.
 
-Les solutions pour l'exercise `1` sont dans le fichier `solution` préfixé par `1` puis le numéro
-du sous exercise. Par exemple dans l'exercise `1` il y a 3 sous exercises donc :
+Les solutions pour l'exercice `1` sont dans le fichier `solution` préfixé par `1` puis le numéro
+du sous exercice. Par exemple dans l'exercice `1` il y a 3 sous exercices donc :
 
 - [`1-1.js`](src/solution/1-1.js)
 - [`1-2.js`](src/solution/1-2.js)
@@ -67,7 +67,7 @@ juste le résultat, afin de comprendre ce que j'attends de toi.
 Cette application est une application Vite.JS et est configurée pour faire de
 l'HTML / CSS / JS basique.
 
-Il y a un seul plugin qui permet "d'injecter" du HTML dans d'autre fichier HTML.
+Il y a un seul plugin qui permet "d'injecter" du HTML dans d'autres fichiers HTML.
 J'utilise ce plugin dans les fichiers exercise à l'intérieur du `<Head>` afin
 d'avoir tout le contenu de [src/chore/partials/head.hbs](src/chore/partials/head.hbs)
 dans le fichier, ce qui évite d'avoir du contenu superflu dans tes fichiers d'exercice.
@@ -79,12 +79,12 @@ Donc fais attention à ne pas l'enlever !
 
 ## Guide des émojis :
 
-- 🦁 C'est **Lienx** le premier lynx dans un corps dans lion du monde ! Il te donneras
-  des indications claire que tu devras suivre.
+- 🦁 C'est **Lienx** le premier lynx dans un corps de lion du monde ! Il te donneras
+  des indications claires que tu devras suivre.
 - 💡 C'est des tips et astuces qui te permettront d'avancer. C'est un peu les cheat-code
-  qui te donne directement une partie de la réponse
-- 💌 Elle t'informe pour chaque exercise ce que tu as appris. Ce n'est pas que dans
-  l'exercise que tu apprends mais aussi dans la vidéo correction associé.
-- ⚠️ Information importante à lire avant de faire l'exercise
-- 📖 Liens vers la documentation officiel
-- ℹ️ Petit information qui te permettent de
+  qui te donnent directement une partie de la réponse
+- 💌 Elle t'informe pour chaque exercice ce que tu as appris. Ce n'est pas que dans
+  l'exercice que tu apprends mais aussi dans la vidéo correction associée.
+- ⚠️ Information importante à lire avant de faire l'exercice
+- 📖 Lien vers la documentation officielle
+- ℹ️ Petite information qui te permettent de
