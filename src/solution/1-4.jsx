@@ -1,25 +1,57 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
-const Button = ({ variant, children }) => {
+const Button = ({ variant = 'primary', size = 'large', children }) => {
   return (
-    <button className={clsx("py-4 px-2", {
-      [`bg-red-600`]: variant === "primary",
-      [`bg-blue-600`]: variant === "secondary",
-      [`bg-gray-600`]: variant === "default",
-    })}>
+    <button
+      className={clsx(
+        'rounded',
+        {
+          'bg-[#646cff]': variant === 'primary',
+          'bg-green-600': variant === 'secondary',
+          'bg-black': variant === 'default',
+        },
+        {
+          'py-2 px-3 text-base': size === 'small',
+          'py-3 px-6 text-lg': size === 'large',
+        }
+      )}
+    >
       {children}
     </button>
   );
 };
 
-const Styles = () => {
+const Demo = () => {
   return (
-    <div>
-      <Button variant="primary">Red</Button>
-      <Button variant="secondary">Blue</Button>
-      <Button variant="default">Default</Button>
+    <div className="flex flex-col gap-2 mt-8 items-center bg-neutral-800">
+      <Button variant="primary" size="small">
+        Primary small
+      </Button>
+      <Button variant="secondary" size="small">
+        Primary small
+      </Button>
+      <Button variant="default" size="small">
+        Default small
+      </Button>
+      <Button variant="primary" size="large">
+        Primary large
+      </Button>
+      <Button variant="secondary" size="large">
+        Secondary large
+      </Button>
+      <Button variant="default" size="large">
+        Default large
+      </Button>
     </div>
   );
 };
 
-export default Styles;
+const App = () => {
+  return (
+    <div className="remove-global-styles">
+      <Demo />
+    </div>
+  );
+};
+
+export default App;

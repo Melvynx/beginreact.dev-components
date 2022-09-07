@@ -1,16 +1,17 @@
-import styles from "../styles/Exercise2.module.css";
+// ℹ️ Dans une vrai application, chaque composant est dans un fichier différent !
+import styles from '../styles/Exercise2.module.css';
 
 const Header = () => (
   <header>
     <h1>Mes recettes de cuisine !</h1>
     <p>Par BeginReact.dev</p>
   </header>
-)
+);
 
 const ShoppingList = () => (
   <div className="flex flex-col gap-4">
     <h2>Liste de course</h2>
-    <div className={styles["shopping-item"]}>
+    <div className={styles['shopping-item']}>
       <div className={styles.section}>
         <p>Carotte !</p>
         <p className={styles.badge}>12</p>
@@ -19,7 +20,7 @@ const ShoppingList = () => (
         <input type="checkbox" />
       </div>
     </div>
-    <div className={styles["shopping-item"]}>
+    <div className={styles['shopping-item']}>
       <div className={styles.section}>
         <p>Patate !</p>
         <p className={styles.badge}>11</p>
@@ -28,7 +29,7 @@ const ShoppingList = () => (
         <input type="checkbox" />
       </div>
     </div>
-    <div className={styles["shopping-item"]}>
+    <div className={styles['shopping-item']}>
       <div className={styles.section}>
         <p>Haricot !</p>
         <p className={styles.badge}>54</p>
@@ -38,9 +39,9 @@ const ShoppingList = () => (
       </div>
     </div>
   </div>
-)
+);
 
-const Recipies = () => (
+const Recipes = () => (
   <div className="flex flex-col gap-4">
     <h2>Liste de recette à faire</h2>
     <ul className="flex flex-col gap-2">
@@ -60,13 +61,13 @@ const Recipies = () => (
       </li>
     </ul>
   </div>
-)
+);
 
 const Footer = () => (
   <footer>
     <p>Create by BeginReact.dev</p>
   </footer>
-)
+);
 
 const App = () => {
   return (
@@ -75,7 +76,7 @@ const App = () => {
       <hr />
       <ShoppingList />
       <hr />
-      <Recipies />
+      <Recipes />
       <hr />
       <Footer />
     </div>

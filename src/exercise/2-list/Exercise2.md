@@ -33,13 +33,13 @@ comment ce `map()` fonctionne.
 
 Dans le module 1, on avait vue que `React.createElement()` acceptait les tableaux.
 
-## Exercise 1
+## Exercise
 
 J'ai une liste de course, mais elle ne s'affiche pas.
 
-J'ai déjà fait le CSS, suit le Lienx 🦁pour résoudre le problème. 
+J'ai déjà fait le CSS, suit le Lienx 🦁 pour résoudre le problème.
 
-## Exercise 2 - Conditional Rendering
+## Extra 2 - Conditional Rendering
 
 Il y a 3 moyens d'afficher du contenu conditionnellement.
 
@@ -93,7 +93,11 @@ Si la quantité est à 1 :
 
 - le badge n'est pas affiché
 
-## Exercise 3 - Key
+Si le nom de l'item fait 2 ou moins caractères (0, 1 ou 3) :
+
+- le titre est en rouge
+
+## Extra 3 - Key
 
 **Il n'y a rien à faire.**
 
@@ -102,7 +106,7 @@ la props "key" dans la liste et regarde comment la checkbox réagis quand tu sup
 
 Regarde la vidéo solution après avoir fait ceci.
 
-## Exercise 4 - Key
+## Extra 4 - Key
 
 **Il n'y a rien à faire.**
 

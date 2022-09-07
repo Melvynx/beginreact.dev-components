@@ -8,17 +8,17 @@ PS : oui tu vas devoir update toujours le même fichier en modifiant
 les styles donc tu vas à chaque exercise devoir supprimer ce que tu as fait.
 Mais les solutions sont là pour garder l'historique.
 
-## Exercise 1 - Plain style
+## Exercise - Plain style
 
 En react comme en HTML tu peux simplement utiliser la propriété `style` pour définir un style.
 
-En HTML tu fais comme ça
+En HTML tu fais comme ça :
 
 ```html
 <div style="color: red;">Hello</div>
 ```
 
-Mais en JSX tu vas devoir faire comme ceci. Utilisé un object.
+Mais en JSX tu vas devoir faire comme ceci. En utilisant un objet :
 
 ```jsx
 <div style={{ color: 'red' }}>Hello</div>
@@ -26,41 +26,63 @@ Mais en JSX tu vas devoir faire comme ceci. Utilisé un object.
 
 [📖 Doc React sur les styles](https://fr.reactjs.org/docs/dom-elements.html#style)
 
-L'avantage, c'est que ce sera typé.
+L'avantage, c'est que ce sera typé. Si tu met un number pour la couleur tu as une erreur !
 
-Tu peux avoir la maquette ici. Utilise la propriété `style` pour définir un style.
+Utilise la propriété `style` pour définir un style. Voici ce que tu dois réalisé :
 
-Instruction dans le fichier de l'exercise.
+![alt](../../assets/style-demo.png)
 
-PS : les boutons ont un style par défaut dans le fichier `index.css`, on change juste le background-color ici.
+Les styles et comment les appliquer sont décris dans le fichier d'exercise.
 
 - 💌 Tu apprends à utiliser les inline style en React.
 
 ### Problème
 
 - duplication des styles
-- pas possible d'utiliser les pseudo-classes (hover)
+- pas possible d'utiliser les pseudo-classes (hover, focus)
 - pas possible d'utiliser les media queries
 - rend les fichiers moins lisibles
 
-## Exercise 2 - Global style
+## Extra 2 - Global style
 
 On va crée des styles globals.
 
-Tu peux aller dans le fichier `src/exercise/1-style/global.css` et voir qu'il existe déjà un style pour `.customButton`.
+Tu peux aller dans le fichier [global.css](src/exercise/1-style/global.css) et voir qu'il existe déjà un style pour `.button`.
 
 Pour que les styles fonctionne, il va falloir importer le fichier `global.css` dans le fichier `Exercise1.js`.
 
-`import "./global.css";`
+💡 `import "./global.css";`
 
-Pour t'apprendre une technique tu retrouveras dans le fichier `global.css` une css variable.
-C'est `var(--background-color)`. On va passer par le tag `style` pour définir la css variable.
+Tu vas pouvoir déplacer les styles par défaut dans ce fichier !
 
-Je te laisse essayer de trouver le moyen de faire ça et je t'explique tout dans la solution.
+Pour t'apprendre une technique tu retrouveras dans le fichier `global.css` des css variables.
+Comme `var(--background-color)`. On va passer par le tag `style` pour définir la css variable.
+
+Les CSS variables permettent de passer des styles de notre JS à notre CSS.
+
+```jsx
+<button style={{ ['--background-color']: '#f0f0f0' }}>Coucou</button>
+```
+
+```css
+button {
+  background-color: var(--background-color);
+}
+```
+
+Je te laisse essayer de trouver le moyen de faire ça en utilisant nos objects `VariantsStyle`
+et je t'explique tout dans la solution. Tu peux ajouter une class `container` pour déplacer
+les styles mis dans la `div` du composant `Demo`.
 
 [📖 Doc React sur les ClassName](https://fr.reactjs.org/docs/faq-styling.html)
 
-**Modifie notre button avec des globaux styles.**
+ℹ️ Sans les CSS variable on devrait définir une classe pour chaque variants (`primary`, `secondary`...)
+et pour chaque size (`large`, `small`) et les ajouter conditionnellement.
+C'est une autre façon de faire qui est aussi très bien !
+
+🤯 Pour aller plus loins, tu peux ajouter les styles de hover/focus etc...
+
+💌 Tu apprends à utiliser les globaux styles et tu comprends le problème.
 
 ### Problème
 
@@ -68,17 +90,15 @@ Je te laisse essayer de trouver le moyen de faire ça et je t'explique tout dans
   - avec plus de 100 components je peux te dire que les styles globaux vont devenir un joyeux bordel
 - il faut chercher ou les styles ont été définis
 
-💌 Tu apprends à utiliser les globaux styles et tu comprends le problème.
-
-## Exercise 3 - CSS Module
+## Extra 3 - CSS Module
 
 C'est celui qu'on va utiliser dans le cadre de cette formation.
 
 C'est la même chose que les globaux styles dans l'aspect, mais ils sont "scopés" à ton composant.
-C'est-à-dire que la class `customButton` ne sera qu'accessible dans le fichier `Exercise1.jsx` ou
+C'est-à-dire que la class `button` ne sera qu'accessible dans le fichier `Exercise1.jsx` ou
 tout autre fichier qui import le `Composant.module.css`.
 
-Tu dois nommer tes fichiers CSS Module comme çA : `ComponentName.module.css`.
+Tu dois nommer tes fichiers CSS Module comme ça : `ComponentName.module.css`.
 
 Ensuite pour l'utiliser tu peux l'importer comme ceci :
 
@@ -95,18 +115,30 @@ Dans le fichier tu pourras mettre par exemple :
 Et tu pourras donc utiliser les styles comme ceci :
 
 ```jsx
-<button className={styles.button}>Hello</button>
+import styles from './Composant.module.css';
+
+<button className={styles.button}>Hello</button>;
 ```
+
+[📖 Doc sur les CSS Module](https://github.com/css-modules/css-modules)
+
+Tu peux faire exactement que les styles globaux mais changé l'import et et c/c ton code
+dans le fichier `Composant.module.css`.
 
 J'explique les détails dans la correction.
 
-**Modifie notre button avec des css module.**
+Remplace les styles globaux par des CSS Module. (Oublie pas le style du composant `Demo`)
 
 Le fichier existe déjà (`Exercise1.module.css`)
 
 - 💌 Tu comprends comment fonctionne les CSS Module et leur utilité.
 
-## Exercise 4 - Tailwind CSS
+🤯 Pour aller plus loins, tu peux ajouter les styles de hover/focus etc...
+
+## Extra 4 - Tailwind CSS (BONUS)
+
+⚠️ Il faut te rendre dans le fichier [index.html](index.html) et décommenter la ligne 8
+pour ajouter la library Tailwind au projet ! ⚠️
 
 Tailwind est le framework populaire du moment. Dans le projet final de
 cette formation, on va l'utiliser pour notre projet.
@@ -128,11 +160,13 @@ Tailwind est très optimisé, c'est-à-dire qu'il va ajouter à ton Application
 **uniquement les classes que tu utilises dans ton app.**
 
 Par exemple si on a une app qui possède uniquement ce button :
+
 ```html
 <button class="bg-red-500 p-2 rounded-lg text-white">Hello</button>
 ```
 
-Tailwind va générer ce CSS : 
+Tailwind va générer ce CSS :
+
 ```css
 .rounded-lg {
   border-radius: 0.5rem;
@@ -155,32 +189,45 @@ Tailwind va générer ce CSS :
 
 **Et pas de CSS en plus inutile.**
 
-Pour faire notre bouton, n'oublie pas que tu dois ajouter le padding. Puis
-les couleurs en fonction de `variant`.
+Pour faire notre bouton, tu vas devoir définir les styles par défaut ainsi que pour
+les variants et sizes.
 
 [📖 Tailwind - bg-color](https://tailwindcss.com/docs/background-color)
 
-Ensuite la library [NPM clsx](https://www.npmjs.com/package/clsx) est juste 
+Pour les couleurs tu peux utiliser :
+
+- primary : `bg-color-[#646cff]`
+- secondary : `bg-green-600`
+- default: `bg-neutral-900`
+
+* [📖 Padding dans Tailwind](https://tailwindcss.com/docs/padding)
+* [📖 Font-size dans Tailwind](https://tailwindcss.com/docs/font-size)
+* [📖 Border-radius dans Tailwind](https://tailwindcss.com/docs/border-radius)
+
+Ensuite la library [NPM clsx](https://www.npmjs.com/package/clsx) est juste
 un utilitaire pour faire des className.
 
-Voici un petit exemple : 
+Voici un petit exemple :
+
 ```jsx
-<button className={clsx("button", { ["red"]: true, ["blue"]: false })}>
+const variant = "primary";
+<button className={clsx("button", { ["primary"]: variant === "primary", ["secondary"]: variant === "secondary" })}>
   Hello
 </button>
 // Equal
-<button className="button red">Hello</button>
+<button className="button primary">Hello</button>
 ```
 
 Elle permet d'ajouter conditionnellement des classes CSS. Evident dans
-une application, ce ne sera pas `true` ou `false` mais une vraie condition
-comme 💡`variant === "primary"`.
+une application.
 
-À toi de jouer !
+À toi de jouer, enlève les CSS Module et utilise Tailwind !
 
 - 💌 Tu comprends comment fonctionne `Tailwind` et `clsx`
 
-## Exercise 5 - Styled-components : css-in-js
+🤯 Pour aller plus loins, tu peux ajouter les styles de hover/focus etc...
+
+## Extra 5 - Styled-components : css-in-js (BONUS)
 
 [Styled-components](https://styled-components.com/docs/basics) est une library React pour faire des styles.
 
@@ -214,13 +261,17 @@ const Button = styled.button({
 const Demo = () => {
   return (
     <div>
-      <Button variant="red" size="sm">Hello</Button>
+      <Button variant="red" size="sm">
+        Hello
+      </Button>
       <Button variant="green">Hello</Button>
     </div>
   );
-}
+};
 ```
 
-**Modifie notre button avec des styled-components.**
+Refactor notre bouton pour utiliser `styled-components` et enlève Tailwind.
 
 - 💌 Tu découvres le `CSS-in-JS` et tu sais qu'il existe.
+
+🤯 Pour aller plus loins, tu peux ajouter les styles de hover/focus etc...

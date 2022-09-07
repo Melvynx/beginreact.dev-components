@@ -6,8 +6,9 @@ const ShoppingListData = [
   { id: 3, name: 'Bread', quantity: 1, checked: false },
   { id: 4, name: 'Soda', quantity: 4, checked: false },
   { id: 5, name: 'Coffee', quantity: 1, checked: false },
-  { id: 6, name: 'Tea', quantity: 1, checked: false },
+  { id: 6, name: 'Te', quantity: 1, checked: false },
   { id: 7, name: 'Cake', quantity: 1, checked: false },
+  { id: 7, name: 'A', quantity: 1, checked: false },
   { id: 8, name: 'Pie', quantity: 1, checked: false },
   { id: 9, name: 'Chips', quantity: 3, checked: false },
 ];
@@ -20,7 +21,13 @@ const ShoppingItem = ({ name, quantity, checked }) => {
   return (
     <div className={styles['shopping-item']}>
       <div className={styles.section}>
-        <p>{name}</p>
+        <p
+          style={{
+            color: name.length <= 2 && 'red',
+          }}
+        >
+          {name}
+        </p>
         {quantity === 1 ? <p className={styles.badge}>{quantity}</p> : null}
       </div>
       <div className={styles.section}>

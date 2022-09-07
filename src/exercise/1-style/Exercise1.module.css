@@ -1,4 +1,6 @@
 .button {
   background-color: var(--background-color);
-  padding: 16px 8px;
+  padding: var(--padding);
+  font-size: var(--font-size);
+  /* default styles... */
 }

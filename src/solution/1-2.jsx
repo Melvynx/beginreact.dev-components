@@ -1,34 +1,76 @@
-import '../exercise/1-style/global.css';
+import './1-2.css';
 
-const VariantStyle = {
+const VariantsStyle = {
   primary: {
-    ['--background-color']: 'red',
+    ['--background-color']: '#646cff',
   },
   secondary: {
-    ['--background-color']: 'blue',
+    ['--background-color']: '#16a34a',
   },
   default: {
-    ['--background-color']: 'gray',
+    ['--background-color']: '#171717',
   },
 };
 
-const Button = ({ variant, children }) => {
-  const variantStyle = VariantStyle[variant];
+const SizesVariant = {
+  small: {
+    ['--padding']: '8px 16px',
+    ['--font-size']: '1rem',
+  },
+  large: {
+    ['--padding']: '12px 24px',
+    ['--font-size']: '1.2rem',
+  },
+};
+
+const Button = ({ variant, size, children }) => {
+  const variantStyle = VariantsStyle[variant];
+  const sizeStyle = SizesVariant[size];
 
   return (
-    <button className="customButton" style={variantStyle}>
+    <button
+      style={{
+        ...variantStyle,
+        ...sizeStyle,
+      }}
+      className="button"
+    >
       {children}
     </button>
   );
 };
-const Styles = () => {
+
+const Demo = () => {
   return (
-    <div>
-      <Button variant="primary">Red</Button>
-      <Button variant="secondary">Blue</Button>
-      <Button variant="default">Default</Button>
+    <div className="container">
+      <Button variant="primary" size="small">
+        Primary small
+      </Button>
+      <Button variant="secondary" size="small">
+        Primary small
+      </Button>
+      <Button variant="default" size="small">
+        Default small
+      </Button>
+      <Button variant="primary" size="large">
+        Primary large
+      </Button>
+      <Button variant="secondary" size="large">
+        Secondary large
+      </Button>
+      <Button variant="default" size="large">
+        Default large
+      </Button>
     </div>
   );
 };
 
-export default Styles;
+const App = () => {
+  return (
+    <div className="remove-global-styles">
+      <Demo />
+    </div>
+  );
+};
+
+export default App;

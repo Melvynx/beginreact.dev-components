@@ -1,23 +1,37 @@
-const VariantStyle = {
+const VariantsStyle = {
   primary: {
-    backgroundColor: 'red',
+    backgroundColor: '#646cff',
   },
   secondary: {
-    backgroundColor: 'blue',
+    backgroundColor: '#16a34a',
   },
   default: {
-    backgroundColor: 'gray',
+    backgroundColor: '#171717',
   },
 };
 
-const Button = ({ variant, children }) => {
-  const variantStyle = VariantStyle[variant];
+const SizesVariant = {
+  small: {
+    padding: '8px 16px',
+    fontSize: '1rem',
+  },
+  large: {
+    padding: '12px 24px',
+    fontSize: '1.2rem',
+  },
+};
+
+const Button = ({ variant, size, children }) => {
+  const variantStyle = VariantsStyle[variant];
+  const sizeStyle = SizesVariant[size];
 
   return (
     <button
       style={{
-        padding: '8px 16px',
+        borderRadius: 4,
+        border: 0,
         ...variantStyle,
+        ...sizeStyle,
       }}
     >
       {children}
@@ -25,14 +39,46 @@ const Button = ({ variant, children }) => {
   );
 };
 
-const Styles = () => {
+const Demo = () => {
   return (
-    <div>
-      <Button variant="primary">Red</Button>
-      <Button variant="secondary">Blue</Button>
-      <Button variant="default">Default</Button>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 8,
+        marginTop: 32,
+        alignItems: 'center',
+        backgroundColor: 'var(--bg-color)',
+      }}
+    >
+      <Button variant="primary" size="small">
+        Primary small
+      </Button>
+      <Button variant="secondary" size="small">
+        Primary small
+      </Button>
+      <Button variant="default" size="small">
+        Default small
+      </Button>
+      <Button variant="primary" size="large">
+        Primary large
+      </Button>
+      <Button variant="secondary" size="large">
+        Secondary large
+      </Button>
+      <Button variant="default" size="large">
+        Default large
+      </Button>
     </div>
   );
 };
 
-export default Styles;
+const App = () => {
+  return (
+    <div className="remove-global-styles">
+      <Demo />
+    </div>
+  );
+};
+
+export default App;

@@ -46,11 +46,11 @@ const UserForm = ({ onSubmitUser }) => {
   );
 };
 
-const Form = () => {
+const App = () => {
   const onSubmitUser = (data) => {
     alert('Form submitted: ' + JSON.stringify(data));
   };
   return <UserForm onSubmitUser={onSubmitUser} />;
 };
 
-export default Form;
+export default App;

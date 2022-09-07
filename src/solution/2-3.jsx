@@ -1,3 +1,6 @@
+// TODO : Delete this line
+// Faire un screen avant après avec CleanShopX
+
 import { useState } from 'react';
 import styles from '../styles/Exercise2.module.css';
 
@@ -5,6 +8,7 @@ const ShoppingListData = [
   { id: 1, name: 'Milk', quantity: 2, checked: false },
   { id: 2, name: 'Eggs', quantity: 12, checked: true },
   { id: 3, name: 'Bread', quantity: 1, checked: false },
+  { id: 4, name: 'Apple', quantity: 99, checked: false },
 ];
 
 const ItemsToAdd = ['banana', 'apple', 'orange', 'pear', 'grape', 'strawberry'];
@@ -24,7 +28,7 @@ const ShoppingItem = ({ name, quantity, checked, onRemove }) => {
   );
 };
 
-const ShoppingList = () => {
+const ShoppingList = ({ children }) => {
   const [items, setItems] = useState(ShoppingListData);
 
   const removeItem = (id) => {
@@ -33,8 +37,6 @@ const ShoppingList = () => {
 
   return (
     <div className={styles['shopping-list']}>
-      <h2>Shopping List</h2>
-
       <button
         onClick={() => {
           setItems([
@@ -52,20 +54,50 @@ const ShoppingList = () => {
       </button>
 
       <div className={styles['shopping-list-items']}>
-        {items.map((item) => (
-          // eslint-disable-next-line react/jsx-key
-          <ShoppingItem
-            // 🦁 Décommente ou commente cette ligne et test !
-            // key={item.id}
-            name={item.name}
-            quantity={item.quantity}
-            checked={item.checked}
-            onRemove={() => removeItem(item.id)}
-          />
-        ))}
+        {children(items, removeItem)}
       </div>
     </div>
   );
 };
 
-export default ShoppingList;
+const App = () => {
+  return (
+    <div>
+      <h2>No key</h2>
+      <ShoppingList>
+        {(items, removeItem) => (
+          <>
+            {items.map((item) => (
+              // eslint-disable-next-line react/jsx-key
+              <ShoppingItem
+                name={item.name}
+                quantity={item.quantity}
+                checked={item.checked}
+                onRemove={() => removeItem(item.id)}
+              />
+            ))}
+          </>
+        )}
+      </ShoppingList>
+
+      <h2 style={{ marginTop: 64 }}>Key</h2>
+      <ShoppingList>
+        {(items, removeItem) => (
+          <>
+            {items.map((item) => (
+              <ShoppingItem
+                key={item.id}
+                name={item.name}
+                quantity={item.quantity}
+                checked={item.checked}
+                onRemove={() => removeItem(item.id)}
+              />
+            ))}
+          </>
+        )}
+      </ShoppingList>
+    </div>
+  );
+};
+
+export default App;

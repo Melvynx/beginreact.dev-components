@@ -1,4 +1,4 @@
-import styles from "../styles/Exercise2.module.css";
+import styles from '../styles/Exercise2.module.css';
 
 const Header = () => (
   <header>
@@ -8,13 +8,13 @@ const Header = () => (
 );
 
 const shoppingItems = [
-  { name: "Carotte", quantity: 12 },
-  { name: "Patate", quantity: 11 },
-  { name: "Haricot", quantity: 54 },
+  { name: 'Carotte', quantity: 12 },
+  { name: 'Patate', quantity: 11 },
+  { name: 'Haricot', quantity: 54 },
 ];
 
 const ShoppingItem = (item) => (
-  <div className={styles["shopping-item"]}>
+  <div className={styles['shopping-item']}>
     <div className={styles.section}>
       <p>{item.name}</p>
       <p className={styles.badge}>{item.quantity}</p>
@@ -34,10 +34,10 @@ const ShoppingList = () => (
   </div>
 );
 
-const recipies = [
-  { name: "Tarte à la carotte", date: "11.06.22" },
-  { name: "Purée de patate", date: "15.08.23" },
-  { name: "Sauce au haricot", date: "22.09.24" },
+const recipes = [
+  { name: 'Tarte à la carotte', date: '11.06.22' },
+  { name: 'Purée de patate', date: '15.08.23' },
+  { name: 'Sauce au haricot', date: '22.09.24' },
 ];
 
 const RecipeItem = (recipe) => (
@@ -47,10 +47,10 @@ const RecipeItem = (recipe) => (
   </li>
 );
 
-const Recipies = () => (
+const Recipes = () => (
   <div className="flex flex-col gap-4">
     <h2>Liste de recette à faire</h2>
-    {recipies.map((recipe) => (
+    {recipes.map((recipe) => (
       <RecipeItem key={recipe.name} {...recipe} />
     ))}
   </div>
@@ -69,7 +69,7 @@ const App = () => {
       <hr />
       <ShoppingList />
       <hr />
-      <Recipies />
+      <Recipes />
       <hr />
       <Footer />
     </div>

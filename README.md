@@ -4,20 +4,29 @@ Pour appréhender correctement React, je vais te faire découvrir les fondamenta
 Il faut bien comprendre quel problème React résout. Dans ce module, on va faire du React
 sans React.
 
-## Lancer le projet
+## Pré-requis
 
-Si tu n'as pas installer les dépendances NPM tu peux faire :
+- [JavaScript à connaître pour commencer React](https://codelynx.dev/posts/javascript-known-to-start-react)
+- Installer le React DevTools ([chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/))
+
+## Systems
+
+- [git](https://git-scm.com/downloads) - v2 ou plus
+- [node](https://nodejs.org/en/) - v12 ou plus
+- [npm](https://nodejs.org/en/) - v6 ou plus
+
+## Setup du projet
 
 ```bash
-npm i
+git clone https://github.com/Melvynx/react-beginners-fundamentals.git
+cd react-beginners-fundamentals
+npm install
 ```
 
-Puis pour lancer le projet :
+Pour lancer le projet :
 
 ```bash
 npm run dev
-# ou
-yarn dev
 ```
 
 ## Construction des exercices
@@ -55,22 +64,24 @@ juste le résultat, afin de comprendre ce que j'attends de toi.
 
 ## Stack exercice
 
-Cette application est une application Vite.JS et est configurée pour faire du
-React.
+Cette application est une application Vite.JS et est configurée pour faire de
+l'HTML / CSS / JS basique.
 
-Cette fois j'utilise le plugin `vite-plugin-markdown` afin d'injecter du Markdown
-directement dans la page web. Tu auras la possibilités dans chaque exercises
-d'afficher directement le markdown afin de ne pas avoir besoin de changer
-de page.
+Il y a un seul plugin qui permet "d'injecter" du HTML dans d'autre fichier HTML.
+J'utilise ce plugin dans les fichiers exercise à l'intérieur du `<Head>` afin
+d'avoir tout le contenu de [src/chore/partials/head.hbs](src/chore/partials/head.hbs)
+dans le fichier, ce qui évite d'avoir du contenu superflu dans tes fichiers d'exercice.
 
-Tous le code qui est dans [src/chore] ne doit pas être modifié. Si tu remarques
-des bug, tu peux me le partager sur Discord.
+Pour l'utiliser, par exemple dans le fichier [src/exercise/1-no-react/Exercise.html](src/exercise/1-no-react/Exercise.html)
+il y a `{{> head}}` à la ligne 4.
+
+Donc fais attention à ne pas l'enlever !
 
 ## Guide des émojis :
 
 - 🦁 C'est **Lienx** le premier lynx dans un corps dans lion du monde ! Il te donneras
   des indications claire que tu devras suivre.
-- 💡 C'est des tips et astuces qui te permettront d'avancer. C'est un peu les cheatcode
+- 💡 C'est des tips et astuces qui te permettront d'avancer. C'est un peu les cheat-code
   qui te donne directement une partie de la réponse
 - 💌 Elle t'informe pour chaque exercise ce que tu as appris. Ce n'est pas que dans
   l'exercise que tu apprends mais aussi dans la vidéo correction associé.

@@ -6,7 +6,7 @@ Il y a plusieurs moyens de gérer les formulaires en React.
 
 Nous allons en voir 4.
 
-## Exercise 1 - Basic
+## Exercise - Basic
 
 Nous allons récupérer les données de notre formulaire en utilisant l'API basique du
 browser avec `onSubmit`.
@@ -18,11 +18,10 @@ ainsi que le `htmlFor` des labels.
 
 💌 Tu apprends à gérer les formulaires dans leur forme la plus simple
 
-## Exercise 2 - useRef
+## Extra 2 - useRef
 
 Nous allons utiliser `useRef` pour récupérer les données de notre formulaire.
-
-Oui nous n'avons pas encore vu `useRef`, mais c'est une intro sur le terrain.
+Remplace dans le `onSubmit` la récupération des valeurs en passant par les refs.
 
 Pour comprendre tu peux lire [la doc de React](https://beta.reactjs.org/apis/useref#manipulating-the-dom-with-a-ref).
 
@@ -34,35 +33,32 @@ que je te propose ici.
 
 💌 Tu découvres le `useRef` dans son usage le plus basique avec un formulaire.
 
-## Exercise 3 - Validate
+## Extra 3 - Validate
 
 Si tu as un champ que tu souhaites faire valider, tu peux utiliser un `state` pour le faire.
 
-Tu rajoute un state `error` (📖 [useState](https://beta.reactjs.org/apis/usestate#usage)).
+🦁 Tu rajoute un state `error` (📖 [useState](https://beta.reactjs.org/apis/usestate#usage)).
 
-Dans le onSubmit, tu vérifies que la longueur du password est de minimum 8 characters,
+🦁 Dans le onSubmit, tu vérifies que la longueur du password est de minimum 8 characters,
 si ce n'est pas le cas tu peux changer `error` en `"Password must be at least 8 characters long"`.
 
 Ensuite afficher en rouge le message d'erreur sous le champ password.
 
 ℹ️ PS : Oui nous n'avons pas encore vu le `useState`, c'est une découverte à l'aveugle
-que je te propose ici.
+que je te propose ici. On rentrera dans les détails du sujet aux prochains Extras.
 
-En plus, lors que l'user écrit dans le champ password, tu supprimes le message d'erreur. 
+🦁 En plus, lors que l'user écrit dans le champ password, tu supprimes le message d'erreur.
 (📖 [React event](https://reactjs.org/docs/handling-events.html))
 
 💌 Tu comprends comment gérer les erreurs dans un formulaire avec des states.
 
-## Exercise 4 - Controlled Input
+## Extra 4 - Controlled Input
 
 Voici le dernier moyen de gérer les formulaires en React, c'est un `controlled input`.
 
 C'est quand tu définis une `value` à ton input. Dans ce cas, tu dois gérer entièrement la valuer
 de l'input. Donc quand il change, tu dois écouter le `onChange` event et update
 la valeur de l'input en fonction.
-
-ℹ️ PS : Oui nous n'avons pas encore vu le useState, c'est une découverte à l'aveugle
-que je te propose ici.
 
 [TODO: Mettre le lien de l'article de blog ici]()
 
@@ -78,14 +74,15 @@ const Input = () => {
 };
 ```
 
-**Remplace le useRef par un state et change les inputs en `controlled input`**
+Remplace le useRef par un state et change les inputs en `controlled input` !
+
 Attention il ne faut pas oublié de réinitialisé l'erreur dans le onChange du password.
 Et il faut laisser la gestion de l'erreur dans le onSubmit.
 
 💌 Tu comprends la différence entre un `controlled input` et un `uncontrolled input`.
 💌 Grace à l'article de blog, tu comprends que l'un provoque plus de render.
 
-## Exercise 5 - react-use-form-hook
+## Extra 5 - react-use-form-hook (BONUS)
 
 Maintenant on va **tout** remplacer par un `useForm` hook.
 
@@ -100,7 +97,7 @@ Je t'en explique plus dans la vidéo solution.
 ⚠️ Si c'est compliqué, ne reste pas bloquer et vas regarder les vidéos de réponse ou
 les fichiers solutions.
 
-Comme dans la vraie vie, va lire la documentation de `react-hook-form` et adapte là pour
+Comme dans un projet seul, va lire la documentation de `react-hook-form` et adapte là pour
 notre application.
 
 💌 Tu comprends l'utilité de la library `react-hook-form` ainsi que son usage
