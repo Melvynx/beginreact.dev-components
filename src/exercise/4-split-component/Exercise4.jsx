@@ -40,7 +40,7 @@ const App = () => {
       </div>
       <hr />
       <div className="flex flex-col gap-4">
-        <h2>Liste de recette à faire</h2>
+        <h2>Liste de recettes à faire</h2>
         <ul className="flex flex-col gap-2">
           <li className="flex gap-4">
             <span>Tarte à la carotte</span>

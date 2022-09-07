@@ -1,6 +1,6 @@
 # Première List !
 
-Dans une application, on a très souvent des listes de données qu'on a envies d'afficher.
+Dans une application, on a très souvent des listes de données qu'on a envie d'afficher.
 
 Donc comment afficher cette liste par exemple ?
 
@@ -10,9 +10,9 @@ const vegetables = ['carrot', 'tomato', 'cucumber', 'celery'];
 
 La [beta documentation de React](https://beta.reactjs.org/learn/rendering-lists) explique très bien les listes.
 
-Mais expliqué est une chose, pratiquer en est une autre.
+Mais expliquer est une chose, pratiquer en est une autre.
 
-Comme React c'est du JSX et donc du JS pour parcourir une liste on utilise `.map`.
+Comme React c'est du JSX, et donc du JS, pour parcourir une liste on utilise `.map`.
 
 ```js
 const vegetables = ['carrot', 'tomato', 'cucumber', 'celery'];
@@ -85,7 +85,7 @@ const App = (props) => {
 
 A toi de jouer.
 
-Dans `ShoppingItem` j'aimerais bien que si la quantité est égal à 0 :
+Dans `ShoppingItem` j'aimerai bien que si la quantité est égale à 0 :
 
 - rien ne s'affiche
 
@@ -93,7 +93,7 @@ Si la quantité est à 1 :
 
 - le badge n'est pas affiché
 
-Si le nom de l'item fait 2 ou moins caractères (0, 1 ou 3) :
+Si le nom de l'item fait 2 caractères ou moins (0, 1 ou 3) :
 
 - le titre est en rouge
 
@@ -102,7 +102,7 @@ Si le nom de l'item fait 2 ou moins caractères (0, 1 ou 3) :
 **Il n'y a rien à faire.**
 
 Regarde juste la solution et amuse-toi avec en commentant / décommentant
-la props "key" dans la liste et regarde comment la checkbox réagis quand tu supprimes des éléments.
+la props "key" dans la liste et regarde comment la checkbox réagit quand tu supprimes des éléments.
 
 Regarde la vidéo solution après avoir fait ceci.
 

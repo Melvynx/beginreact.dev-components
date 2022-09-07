@@ -1,9 +1,9 @@
 const UserForm = ({ onSubmitUser }) => {
   // 🦁 Crée une fonction handleSubmit qui prend `event` en paramètre.
   // Récupère ensuite les deux données du formulaire (name et password)
-  // Pour ça tu peux t'aidé en loggant dans la console `event.target` et en cherchant les propriétés name et password.
+  // Pour ça tu peux t'aider en loggant dans la console `event.target` et en cherchant les propriétés name et password.
 
-  // 🦁 Appel la fonction `onSubmitUser` avec les deux données du formulaire dans un object
+  // 🦁 Appelle la fonction `onSubmitUser` avec les deux données du formulaire dans un object
   // 💡 onSubmitUser({ name, password })
 
   return (

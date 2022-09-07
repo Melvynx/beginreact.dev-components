@@ -5,7 +5,7 @@ Pour une page web, il te faut des styles.
 Il y a de nombreuses façons de faire les styles en React et je vais **t'en présenter 5.**
 
 PS : oui tu vas devoir update toujours le même fichier en modifiant
-les styles donc tu vas à chaque exercise devoir supprimer ce que tu as fait.
+les styles donc tu vas à chaque exercice devoir supprimer ce que tu as fait.
 Mais les solutions sont là pour garder l'historique.
 
 ## Exercise - Plain style
@@ -26,13 +26,13 @@ Mais en JSX tu vas devoir faire comme ceci. En utilisant un objet :
 
 [📖 Doc React sur les styles](https://fr.reactjs.org/docs/dom-elements.html#style)
 
-L'avantage, c'est que ce sera typé. Si tu met un number pour la couleur tu as une erreur !
+L'avantage, c'est que ce sera typé. Si tu mets un number pour la couleur tu as une erreur !
 
-Utilise la propriété `style` pour définir un style. Voici ce que tu dois réalisé :
+Utilise la propriété `style` pour définir un style. Voici ce que tu dois réaliser :
 
 ![alt](../../assets/style-demo.png)
 
-Les styles et comment les appliquer sont décris dans le fichier d'exercise.
+Les styles et comment les appliquer sont décrits dans le fichier d'exercice.
 
 - 💌 Tu apprends à utiliser les inline style en React.
 
@@ -45,17 +45,17 @@ Les styles et comment les appliquer sont décris dans le fichier d'exercise.
 
 ## Extra 2 - Global style
 
-On va crée des styles globals.
+On va créer des styles globaux.
 
 Tu peux aller dans le fichier [global.css](src/exercise/1-style/global.css) et voir qu'il existe déjà un style pour `.button`.
 
-Pour que les styles fonctionne, il va falloir importer le fichier `global.css` dans le fichier `Exercise1.js`.
+Pour que les styles fonctionnent, il va falloir importer le fichier `global.css` dans le fichier `Exercise1.js`.
 
 💡 `import "./global.css";`
 
 Tu vas pouvoir déplacer les styles par défaut dans ce fichier !
 
-Pour t'apprendre une technique tu retrouveras dans le fichier `global.css` des css variables.
+Pour t'apprendre une technique, tu retrouveras dans le fichier `global.css` des css variables.
 Comme `var(--background-color)`. On va passer par le tag `style` pour définir la css variable.
 
 Les CSS variables permettent de passer des styles de notre JS à notre CSS.
@@ -76,31 +76,31 @@ les styles mis dans la `div` du composant `Demo`.
 
 [📖 Doc React sur les ClassName](https://fr.reactjs.org/docs/faq-styling.html)
 
-ℹ️ Sans les CSS variable on devrait définir une classe pour chaque variants (`primary`, `secondary`...)
+ℹ️ Sans les CSS variables on devrait définir une classe pour chaque variant (`primary`, `secondary`...)
 et pour chaque size (`large`, `small`) et les ajouter conditionnellement.
 C'est une autre façon de faire qui est aussi très bien !
 
-🤯 Pour aller plus loins, tu peux ajouter les styles de hover/focus etc...
+🤯 Pour aller plus loin, tu peux ajouter les styles de hover/focus etc...
 
-💌 Tu apprends à utiliser les globaux styles et tu comprends le problème.
+💌 Tu apprends à utiliser les styles globaux et tu comprends le problème.
 
 ### Problème
 
 - toute l'application va avoir ce style (si un autre button dans l'application a la class `customButton`, c'est le style qui sera appliqué)
   - avec plus de 100 components je peux te dire que les styles globaux vont devenir un joyeux bordel
-- il faut chercher ou les styles ont été définis
+- il faut chercher où les styles ont été définis
 
 ## Extra 3 - CSS Module
 
 C'est celui qu'on va utiliser dans le cadre de cette formation.
 
-C'est la même chose que les globaux styles dans l'aspect, mais ils sont "scopés" à ton composant.
+C'est la même chose que les styles globaux dans l'aspect, mais ils sont "scopés" à ton composant.
 C'est-à-dire que la class `button` ne sera qu'accessible dans le fichier `Exercise1.jsx` ou
-tout autre fichier qui import le `Composant.module.css`.
+tout autre fichier qui importe le `Composant.module.css`.
 
 Tu dois nommer tes fichiers CSS Module comme ça : `ComponentName.module.css`.
 
-Ensuite pour l'utiliser tu peux l'importer comme ceci :
+Ensuite, pour l'utiliser, tu peux l'importer comme ceci :
 
 `import styles from "./Composant.module.css";`
 
@@ -122,7 +122,7 @@ import styles from './Composant.module.css';
 
 [📖 Doc sur les CSS Module](https://github.com/css-modules/css-modules)
 
-Tu peux faire exactement que les styles globaux mais changé l'import et et c/c ton code
+Tu peux faire exactement que les styles globaux mais changer l'import et c/c ton code
 dans le fichier `Composant.module.css`.
 
 J'explique les détails dans la correction.
@@ -133,7 +133,7 @@ Le fichier existe déjà (`Exercise1.module.css`)
 
 - 💌 Tu comprends comment fonctionne les CSS Module et leur utilité.
 
-🤯 Pour aller plus loins, tu peux ajouter les styles de hover/focus etc...
+🤯 Pour aller plus loin, tu peux ajouter les styles de hover/focus etc...
 
 ## Extra 4 - Tailwind CSS (BONUS)
 
@@ -145,13 +145,13 @@ cette formation, on va l'utiliser pour notre projet.
 
 Il faut donc que tu saches le maîtriser.
 
-Avec Tailwind je vais te faire découvrir le lib incontournable : `clsx`.
+Avec Tailwind je vais te faire découvrir la lib incontournable : `clsx`.
 
 Déjà Tailwind est une library "Utility First". Elle offre des classes
-prédéfinit qui te permettre d'ajouter des styles sans passer par un fichier
+prédéfinies qui te permettent d'ajouter des styles sans passer par un fichier
 CSS. Directement dans le HTML.
 
-Tailwind possède un Playground ou tu peux t'amuser, je t'ai [préparé
+Tailwind possède un Playground où tu peux t'amuser, je t'ai [préparé
 une démo](https://play.tailwindcss.com/ZtvTfomsMR) qui vient de [hyperui
 ](https://www.hyperui.dev/components/marketing/buttons) qui est une library
 de composant pour Tailwind. Tu as juste à copier-coller le code HTML.
@@ -204,7 +204,7 @@ Pour les couleurs tu peux utiliser :
 * [📖 Font-size dans Tailwind](https://tailwindcss.com/docs/font-size)
 * [📖 Border-radius dans Tailwind](https://tailwindcss.com/docs/border-radius)
 
-Ensuite la library [NPM clsx](https://www.npmjs.com/package/clsx) est juste
+Ensuite, la library [NPM clsx](https://www.npmjs.com/package/clsx) est juste
 un utilitaire pour faire des className.
 
 Voici un petit exemple :
@@ -225,7 +225,7 @@ une application.
 
 - 💌 Tu comprends comment fonctionne `Tailwind` et `clsx`
 
-🤯 Pour aller plus loins, tu peux ajouter les styles de hover/focus etc...
+🤯 Pour aller plus loin, tu peux ajouter les styles de hover/focus etc...
 
 ## Extra 5 - Styled-components : css-in-js (BONUS)
 
@@ -274,4 +274,4 @@ Refactor notre bouton pour utiliser `styled-components` et enlève Tailwind.
 
 - 💌 Tu découvres le `CSS-in-JS` et tu sais qu'il existe.
 
-🤯 Pour aller plus loins, tu peux ajouter les styles de hover/focus etc...
+🤯 Pour aller plus loin, tu peux ajouter les styles de hover/focus etc...

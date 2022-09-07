@@ -33,7 +33,7 @@ const ShoppingList = () => {
       <div className={styles['shopping-list-items']}>
         {/* 💣 supprime cette ligne */}
         <ShoppingItem name="Milk" quantity={2} checked={false} />
-        {/* 🦁 Fait une liste en utilisant ShoppingListData */}
+        {/* 🦁 Fais une liste en utilisant ShoppingListData */}
         {/* 💡 ShoppingListData.map(item => ()) */}
         {/* 💡 N'oublie pas la `key` */}
       </div>

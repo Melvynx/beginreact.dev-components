@@ -1,4 +1,4 @@
-// 🦁 Les styles par défaut pour toutes les variants sont :
+// 🦁 Les styles par défaut pour touts les variants sont :
 // - border: 0
 // - borderRadius: 4
 
@@ -10,7 +10,7 @@
 // - default : le background est #171717
 
 // 🦁 Il y a deux size : `small` et `large`
-// Fait la même chose que pour les variants (en utilisant SizesStyle)
+// Fais la même chose que pour les variants (en utilisant SizesStyle)
 // - small : le padding est 8px 16px et le fontSize est 1rem
 // - large : le padding est 12px 24px et le fontSize est 1.2rem
 
