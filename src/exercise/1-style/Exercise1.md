@@ -229,6 +229,9 @@ une application.
 
 ## Extra 5 - Styled-components : css-in-js (BONUS)
 
+⚠️ Il faut te rendre dans le fichier [index.html](index.html) et commenter la ligne 8
+pour enlever la library Tailwind au projet ! ⚠️
+
 [Styled-components](https://styled-components.com/docs/basics) est une library React pour faire des styles.
 
 Elle fait ses styles directement dans le JS.
