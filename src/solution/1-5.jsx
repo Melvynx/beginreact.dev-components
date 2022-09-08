@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Button = styled.button(
   {
@@ -8,28 +8,28 @@ const Button = styled.button(
   {
     backgroundColor: (props) => {
       switch (props.variant) {
-        case 'primary':
-          return '#646cff';
-        case 'secondary':
-          return '#16a34a';
+        case "primary":
+          return "#646cff";
+        case "secondary":
+          return "#16a34a";
         default:
-          return '#171717';
+          return "#171717";
       }
     },
   },
   {
-    padding: (props) => (props.size === 'small' ? '8px 16px' : '12px 24px'),
-    fontSize: (props) => (props.size === 'small' ? '1rem' : '1.2rem'),
+    padding: (props) => (props.size === "small" ? "8px 16px" : "12px 24px"),
+    fontSize: (props) => (props.size === "small" ? "1rem" : "1.2rem"),
   }
 );
 
 const DemoContainer = styled.div({
-  backgroundColor: 'var(--bg-color)',
+  backgroundColor: "var(--bg-color)",
   marginTop: 32,
   gap: 16,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
 });
 
 const Demo = () => {
@@ -39,7 +39,7 @@ const Demo = () => {
         Primary small
       </Button>
       <Button variant="secondary" size="small">
-        Primary small
+        Secondary small
       </Button>
       <Button variant="default" size="small">
         Default small

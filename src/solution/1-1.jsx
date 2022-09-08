@@ -1,23 +1,23 @@
 const VariantsStyle = {
   primary: {
-    backgroundColor: '#646cff',
+    backgroundColor: "#646cff",
   },
   secondary: {
-    backgroundColor: '#16a34a',
+    backgroundColor: "#16a34a",
   },
   default: {
-    backgroundColor: '#171717',
+    backgroundColor: "#171717",
   },
 };
 
 const SizesVariant = {
   small: {
-    padding: '8px 16px',
-    fontSize: '1rem',
+    padding: "8px 16px",
+    fontSize: "1rem",
   },
   large: {
-    padding: '12px 24px',
-    fontSize: '1.2rem',
+    padding: "12px 24px",
+    fontSize: "1.2rem",
   },
 };
 
@@ -43,19 +43,19 @@ const Demo = () => {
   return (
     <div
       style={{
-        display: 'flex',
-        flexDirection: 'column',
+        display: "flex",
+        flexDirection: "column",
         gap: 8,
         marginTop: 32,
-        alignItems: 'center',
-        backgroundColor: 'var(--bg-color)',
+        alignItems: "center",
+        backgroundColor: "var(--bg-color)",
       }}
     >
       <Button variant="primary" size="small">
         Primary small
       </Button>
       <Button variant="secondary" size="small">
-        Primary small
+        Secondary small
       </Button>
       <Button variant="default" size="small">
         Default small
