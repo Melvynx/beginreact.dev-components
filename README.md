@@ -16,8 +16,8 @@ Découvertes en profondeurs des composants React.
 ## Setup du projet
 
 ```bash
-git clone https://github.com/Melvynx/react-beginners-fundamentals.git
-cd react-beginners-fundamentals
+git clone https://github.com/Melvynx/beginreact.dev-components.git
+cd beginreact.dev-components
 npm install
 ```
 
