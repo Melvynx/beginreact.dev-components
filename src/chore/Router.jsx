@@ -4,11 +4,11 @@
  * This file is created to make the exercises friendly. Any update can break the exercises.
  */
 
-import React from 'react';
-import { Navigate, Route, Routes } from 'react-router';
-import { Link } from 'react-router-dom';
-import { EXERCISES } from './exercises';
-import { ExerciseProse } from './ExerciseProse.jsx';
+import React from "react";
+import { Navigate, Route, Routes } from "react-router";
+import { Link } from "react-router-dom";
+import { EXERCISES } from "./exercises";
+import { ExerciseProse } from "./ExerciseProse.jsx";
 
 export const Router = () => {
   return (
@@ -97,7 +97,7 @@ const ExerciseRoutes = ({ data }) => {
 const Home = () => {
   return (
     <div className="navigation-page">
-      <h1 className="work-sans">BeginReact - Les hooks</h1>
+      <h1 className="work-sans">BeginReact - Les components</h1>
       <div className="nav-list">
         {EXERCISES.map((exercise, i) => (
           <Link key={i} to={`/${exercise.name}`}>
@@ -108,8 +108,8 @@ const Home = () => {
       <p>
         Les liens te permettent de te repérer dans les exercises.
         <br />
-        Si tu es perdu ou tu as des problèmes, rejoins le discord et n'hésites pas à
-        demander de l'aide.
+        Si tu es perdu ou tu as des problèmes, rejoins le discord et n'hésites
+        pas à demander de l'aide.
         <p>on aime tous coder comme des petits fous</p>
       </p>
     </div>
