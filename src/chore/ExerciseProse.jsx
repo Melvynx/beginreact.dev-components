@@ -86,9 +86,9 @@ const Prose = ({ children }) => {
 
   if (!isOpen) {
     return (
-      <div className="absolute-open-button">
-        <button onClick={() => handleClick()}>Open md</button>
-      </div>
+      <button className="absolute-open-button" onClick={() => handleClick()}>
+        Open md
+      </button>
     );
   }
 

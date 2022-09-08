@@ -41,6 +41,8 @@
   position: absolute;
   top: 16px;
   left: 16px;
+  font-size: 0.75rem;
+  padding: 4px 8px;
 }
 
 .code {
@@ -71,7 +73,6 @@
   right: 0;
   height: 3px;
   width: 100%;
-  @apply bg-gradient-teal transform bg-gradient-to-r transition-transform duration-200;
   pointer-events: none;
 }
 
