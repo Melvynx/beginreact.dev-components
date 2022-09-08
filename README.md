@@ -1,8 +1,6 @@
-# Module 1 - Les fundamentals
+# Module 2 - Les components
 
-Pour appréhender correctement React, je vais te faire découvrir les fondamentaux de React.
-Il faut bien comprendre quel problème React résout. Dans ce module, on va faire du React
-sans React.
+Découvertes en profondeurs des composants React.
 
 ## Pré-requis
 
