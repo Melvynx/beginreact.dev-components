@@ -53,8 +53,8 @@ const Prose = ({ children }) => {
     const imgElements = Array.from(current.querySelectorAll("img"));
     for (const img of imgElements) {
       const src = img.getAttribute("src");
-      if (src.startsWith("../../../")) {
-        img.setAttribute("src", src.replace("../../../", "/"));
+      if (src.startsWith("../../../public/")) {
+        img.setAttribute("src", src.replace("../../../public/", "/"));
       }
     }
 
@@ -65,7 +65,7 @@ const Prose = ({ children }) => {
     );
 
     for (const h2 of h2Elements) {
-      const exerciseNo = h2.textContent.match(/\d+/)[0];
+      const exerciseNo = h2.textContent.match(/\d+/)?.[0] ?? 1;
 
       const link = document.createElement("a");
       const currentUrl = window.location.pathname.split("/")[1];

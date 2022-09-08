@@ -21,7 +21,7 @@ En HTML tu fais comme ça :
 Mais en JSX tu vas devoir faire comme ceci. En utilisant un objet :
 
 ```jsx
-<div style={{ color: 'red' }}>Hello</div>
+<div style={{ color: "red" }}>Hello</div>
 ```
 
 [📖 Doc React sur les styles](https://fr.reactjs.org/docs/dom-elements.html#style)
@@ -30,7 +30,7 @@ L'avantage, c'est que ce sera typé. Si tu mets un number pour la couleur tu as 
 
 Utilise la propriété `style` pour définir un style. Voici ce que tu dois réaliser :
 
-![alt](../../assets/style-demo.png)
+![alt](../../../public/style-demo.png)
 
 Les styles et comment les appliquer sont décrits dans le fichier d'exercice.
 
@@ -61,7 +61,7 @@ Comme `var(--background-color)`. On va passer par le tag `style` pour définir l
 Les CSS variables permettent de passer des styles de notre JS à notre CSS.
 
 ```jsx
-<button style={{ ['--background-color']: '#f0f0f0' }}>Coucou</button>
+<button style={{ ["--background-color"]: "#f0f0f0" }}>Coucou</button>
 ```
 
 ```css
@@ -115,7 +115,7 @@ Dans le fichier tu pourras mettre par exemple :
 Et tu pourras donc utiliser les styles comme ceci :
 
 ```jsx
-import styles from './Composant.module.css';
+import styles from "./Composant.module.css";
 
 <button className={styles.button}>Hello</button>;
 ```
@@ -248,14 +248,14 @@ const Button = styled.button({
   // en utilisant une fonction tu va pouvoir définir des styles conditionnellement
   // ici avec un block
   backgroundColor: (props) => {
-    if (props.variant === 'red') return 'red';
-    else if (props.variant === 'green') return 'green';
-    else return 'white';
+    if (props.variant === "red") return "red";
+    else if (props.variant === "green") return "green";
+    else return "white";
   },
-  color: 'white',
+  color: "white",
   // ici j'utilise un ternaire pour définir la largeur du bouton en fonction
   // de la props "size"
-  padding: (props) => (props.size === 'sm' ? '8px 12px' : '16px 20px'),
+  padding: (props) => (props.size === "sm" ? "8px 12px" : "16px 20px"),
 });
 
 const Demo = () => {

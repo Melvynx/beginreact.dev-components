@@ -33,6 +33,14 @@
   border-radius: 8px;
 }
 
+.shopping-item p {
+  margin: 0;
+}
+
+.bg-paper {
+  background: var(--paper);
+}
+
 .shopping-item .section {
   display: flex;
   flex-direction: row;
@@ -47,8 +55,30 @@
 
   background: #27ae60;
   border-radius: 4px;
+  margin: 0;
 }
 
 .shopping-item p {
   font-size: 1rem;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-8 {
+  gap: 128px;
+}
+
+.gap-4 {
+  gap: 64px;
+}
+
+.gap-2 {
+  gap: 32px;
 }
