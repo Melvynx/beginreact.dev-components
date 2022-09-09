@@ -33,7 +33,7 @@ const Button = ({ variant, size, children }) => {
         ...variantStyle,
         ...sizeStyle,
       }}
-      className="button"
+      className="button-1-2"
     >
       {children}
     </button>
@@ -42,7 +42,7 @@ const Button = ({ variant, size, children }) => {
 
 const Demo = () => {
   return (
-    <div className="container">
+    <div className="container-1-2">
       <Button variant="primary" size="small">
         Primary small
       </Button>

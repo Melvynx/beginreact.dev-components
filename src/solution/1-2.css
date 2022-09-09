@@ -1,4 +1,4 @@
-.button {
+.button-1-2 {
   background-color: var(--background-color);
   padding: var(--padding);
   font-size: var(--font-size);
@@ -6,7 +6,7 @@
   border: 0;
 }
 
-.container {
+.container-1-2 {
   display: flex;
   flex-direction: column;
   gap: 8px;
