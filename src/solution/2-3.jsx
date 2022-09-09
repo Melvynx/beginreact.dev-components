@@ -14,10 +14,12 @@ const ShoppingListData = [
 const ItemsToAdd = ["banana", "apple", "orange", "pear", "grape", "strawberry"];
 
 const ShoppingItem = ({ name, quantity, checked, onRemove }) => {
+  const [stateName] = useState(name);
+
   return (
     <div className={styles["shopping-item"]}>
       <div className={styles.section}>
-        <p>{name}</p>
+        <p>{stateName}</p>
         <p className={styles.badge}>{quantity}</p>
       </div>
       <div className={styles.section}>
