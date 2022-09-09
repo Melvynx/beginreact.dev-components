@@ -5,7 +5,7 @@ Dans une application, on a très souvent des listes de données qu'on a envie d'
 Donc comment afficher cette liste par exemple ?
 
 ```js
-const vegetables = ['carrot', 'tomato', 'cucumber', 'celery'];
+const vegetables = ["carrot", "tomato", "cucumber", "celery"];
 ```
 
 La [beta documentation de React](https://beta.reactjs.org/learn/rendering-lists) explique très bien les listes.
@@ -15,7 +15,7 @@ Mais expliquer est une chose, pratiquer en est une autre.
 Comme React c'est du JSX, et donc du JS, pour parcourir une liste on utilise `.map`.
 
 ```js
-const vegetables = ['carrot', 'tomato', 'cucumber', 'celery'];
+const vegetables = ["carrot", "tomato", "cucumber", "celery"];
 
 const VegetablesList = () => {
   return (
@@ -62,7 +62,7 @@ const App = (props) => {
   return (
     <div>
       <p>Hello</p>
-      <p>{props.isLoading && 'Loading...'}</p>
+      <p>{props.isLoading && "Loading..."}</p>
     </div>
   );
 };
@@ -77,7 +77,7 @@ const App = (props) => {
   return (
     <div>
       <p>Hello</p>
-      <p>{props.isLoading ? 'Loading...' : props.children}</p>
+      <p>{props.isLoading ? "Loading..." : props.children}</p>
     </div>
   );
 };
@@ -85,7 +85,7 @@ const App = (props) => {
 
 A toi de jouer.
 
-Dans `ShoppingItem` j'aimerai bien que si la quantité est égale à 0 :
+Dans `ShoppingItem` j'aimerais bien que si la quantité est égale ou inférieure à 0 :
 
 - rien ne s'affiche
 
@@ -93,9 +93,13 @@ Si la quantité est à 1 :
 
 - le badge n'est pas affiché
 
-Si le nom de l'item fait 2 caractères ou moins (0, 1 ou 3) :
+Si le nom de l'item fait 2 caractères ou moins (0, 1 ou 2) :
 
 - le titre est en rouge
+
+Sinon :
+
+- le titre est vert
 
 ## Extra 3 - Key
 

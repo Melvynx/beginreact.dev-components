@@ -86,3 +86,4 @@ Donc fais attention à ne pas l'enlever !
 - ⚠️ Information importante à lire avant de faire l'exercice
 - 📖 Lien vers la documentation officielle
 - ℹ️ Petite information qui te permettent de
+- 💣 Supprimer une ligne

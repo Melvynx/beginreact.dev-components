@@ -137,7 +137,7 @@ Le fichier existe déjà (`Exercise1.module.css`)
 
 ## Extra 4 - Tailwind CSS (BONUS)
 
-⚠️ Il faut te rendre dans le fichier [index.html](index.html) et décommenter la ligne 8
+⚠️ Il faut te rendre dans le fichier [index.html](/index.html) et décommenter la ligne 8
 pour ajouter la library Tailwind au projet ! ⚠️
 
 Tailwind est le framework populaire du moment. Dans le projet final de
@@ -196,7 +196,7 @@ les variants et sizes.
 
 Pour les couleurs tu peux utiliser :
 
-- primary : `bg-color-[#646cff]`
+- primary : `bg-[#646cff]`
 - secondary : `bg-green-600`
 - default: `bg-neutral-900`
 
@@ -229,7 +229,7 @@ une application.
 
 ## Extra 5 - Styled-components : css-in-js (BONUS)
 
-⚠️ Il faut te rendre dans le fichier [index.html](index.html) et commenter la ligne 8
+⚠️ Il faut te rendre dans le fichier [index.html](/index.html) et commenter la ligne 8
 pour enlever la library Tailwind au projet ! ⚠️
 
 [Styled-components](https://styled-components.com/docs/basics) est une library React pour faire des styles.

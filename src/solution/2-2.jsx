@@ -14,7 +14,7 @@ const ShoppingListData = [
 ];
 
 const ShoppingItem = ({ name, quantity, checked }) => {
-  if (quantity === 0) {
+  if (quantity <= 0) {
     return null;
   }
 
@@ -23,7 +23,7 @@ const ShoppingItem = ({ name, quantity, checked }) => {
       <div className={styles.section}>
         <p
           style={{
-            color: name.length <= 2 && "red",
+            color: name.length <= 2 ? "red" : "green",
           }}
         >
           {name}
