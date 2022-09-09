@@ -101,7 +101,17 @@ Sinon :
 
 - le titre est vert
 
-## Extra 3 - Key
+## Extra 3 - Filter
+
+Dans l'exercice précédent, on n'affiche pas tous les éléments qui ont une
+une quantité inférieure ou égale à 0.
+
+À la place de mettre cette condition dans le composant `ShoppingItem` ce
+qui n'est pas très propre, nous pouvons filtrer notre liste auparavant !
+
+[📖 Filtrer un tableau](https://beta.reactjs.org/learn/rendering-lists#filtering-arrays-of-items)
+
+## Extra 4 - Key
 
 **Il n'y a rien à faire.**
 
@@ -110,9 +120,13 @@ la props "key" dans la liste et regarde comment la checkbox réagit quand tu sup
 
 Regarde la vidéo solution après avoir fait ceci.
 
-## Extra 4 - Key
+[📖 Comprendre les keys](https://beta.reactjs.org/learn/rendering-lists#filtering-arrays-of-items)
+
+## Extra 5 - Key
 
 **Il n'y a rien à faire.**
 
 Regarde juste la solution et place ton curseur dans les inputs puis attend et regarde
 comment React gère ton curseur en fonction des différents input.
+
+[📖 Pourquoi React à besoin de key]([📖 Comprendre les keys](https://beta.reactjs.org/learn/rendering-lists#filtering-arrays-of-items))

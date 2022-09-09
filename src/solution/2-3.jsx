@@ -1,105 +1,60 @@
-// TODO : Delete this line
-// Faire un screen avant après avec CleanShopX
-
-import { useState } from "react";
 import styles from "../styles/Exercise2.module.css";
 
 const ShoppingListData = [
   { id: 1, name: "Milk", quantity: 2, checked: false },
-  { id: 2, name: "Eggs", quantity: 12, checked: true },
+  { id: 2, name: "Eggs", quantity: 12, checked: false },
   { id: 3, name: "Bread", quantity: 1, checked: false },
-  { id: 4, name: "Apple", quantity: 99, checked: false },
+  { id: 4, name: "Soda", quantity: 4, checked: false },
+  { id: 5, name: "Coffee", quantity: 1, checked: false },
+  { id: 6, name: "Te", quantity: 100, checked: false },
+  { id: 7, name: "Cake", quantity: 1, checked: false },
+  { id: 7, name: "A", quantity: 122, checked: false },
+  { id: 8, name: "Pie", quantity: 1, checked: false },
+  { id: 9, name: "Chips", quantity: 3, checked: false },
 ];
 
-const ItemsToAdd = ["banana", "apple", "orange", "pear", "grape", "strawberry"];
-
-const ShoppingItem = ({ name, quantity, checked, onRemove }) => {
-  const [stateName] = useState(name);
-
+const ShoppingItem = ({ name, quantity, checked }) => {
   return (
     <div className={styles["shopping-item"]}>
       <div className={styles.section}>
-        <p>{stateName}</p>
-        <p className={styles.badge}>{quantity}</p>
+        <p
+          style={{
+            color: name.length <= 2 ? "red" : "green",
+          }}
+        >
+          {name}
+        </p>
+        {quantity !== 1 ? <p className={styles.badge}>{quantity}</p> : null}
       </div>
       <div className={styles.section}>
-        <button onClick={onRemove}>Remove</button>
         <input type="checkbox" defaultChecked={checked} />
       </div>
     </div>
   );
 };
 
-const ShoppingList = ({ children }) => {
-  const [items, setItems] = useState(ShoppingListData);
+const ExistingShoppingListData = ShoppingListData.filter(
+  (item) => item.quantity < 0
+);
 
-  const removeItem = (id) => {
-    setItems(items.filter((item) => item.id !== id));
-  };
-
+const ShoppingList = () => {
   return (
     <div className={styles["shopping-list"]}>
-      <button
-        onClick={() => {
-          setItems([
-            ...items,
-            {
-              id: items.length > 0 ? items[items.length - 1].id + 1 : 0,
-              name: ItemsToAdd[Math.floor(Math.random() * ItemsToAdd.length)],
-              quantity: Math.round(Math.random() * 100),
-              checked: false,
-            },
-          ]);
-        }}
-      >
-        Add an items
-      </button>
+      <h2>Shopping List</h2>
 
       <div className={styles["shopping-list-items"]}>
-        {children(items, removeItem)}
+        {ExistingShoppingListData.map((item) => (
+          <ShoppingItem
+            key={item.name}
+            name={item.name}
+            price={item.price}
+            quantity={item.quantity}
+            checked={item.checked}
+          />
+        ))}
       </div>
     </div>
   );
 };
 
-const App = () => {
-  return (
-    <div>
-      <h2>No key</h2>
-      <ShoppingList>
-        {(items, removeItem) => (
-          <>
-            {items.map((item) => (
-              // eslint-disable-next-line react/jsx-key
-              <ShoppingItem
-                name={item.name}
-                quantity={item.quantity}
-                checked={item.checked}
-                onRemove={() => removeItem(item.id)}
-              />
-            ))}
-          </>
-        )}
-      </ShoppingList>
-
-      <h2 style={{ marginTop: 64 }}>Key</h2>
-      <ShoppingList>
-        {(items, removeItem) => (
-          <>
-            {items.map((item) => (
-              <ShoppingItem
-                key={item.id}
-                name={item.name}
-                quantity={item.quantity}
-                checked={item.checked}
-                onRemove={() => removeItem(item.id)}
-              />
-            ))}
-          </>
-        )}
-      </ShoppingList>
-    </div>
-  );
-};
-
-export default App;
+export default ShoppingList;

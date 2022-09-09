@@ -1,73 +1,105 @@
-import { useEffect, useState } from 'react';
+// TODO : Delete this line
+// Faire un screen avant après avec CleanShopX
 
-const vegetables = ['carrot', 'tomato', 'cucumber', 'pepper'];
+import { useState } from "react";
+import styles from "../styles/Exercise2.module.css";
 
-const Item = ({ item }) => <input value={item} />;
+const ShoppingListData = [
+  { id: 1, name: "Milk", quantity: 2, checked: false },
+  { id: 2, name: "Eggs", quantity: 12, checked: true },
+  { id: 3, name: "Bread", quantity: 1, checked: false },
+  { id: 4, name: "Apple", quantity: 99, checked: false },
+];
 
-function shuffle(array) {
-  let currentIndex = array.length,
-    randomIndex;
+const ItemsToAdd = ["banana", "apple", "orange", "pear", "grape", "strawberry"];
 
-  // While there remain elements to shuffle.
-  while (currentIndex != 0) {
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-
-  return array;
-}
-
-const Demo = () => {
-  const [items, setItems] = useState(vegetables);
-  console.log(items);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // shuffle items
-      setItems((previous) => [...shuffle(previous)]);
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+const ShoppingItem = ({ name, quantity, checked, onRemove }) => {
+  const [stateName] = useState(name);
 
   return (
-    <div>
-      <h2>Without key</h2>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '4px' }}
-      >
-        {items.map((item) => (
-          // eslint-disable-next-line react/jsx-key
-          <Item item={item} />
-        ))}
+    <div className={styles["shopping-item"]}>
+      <div className={styles.section}>
+        <p>{stateName}</p>
+        <p className={styles.badge}>{quantity}</p>
       </div>
-      <h2>With key index</h2>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '4px' }}
-      >
-        {items.map((item, index) => (
-          <Item key={index} item={item} />
-        ))}
-      </div>
-      <h2>With unique key</h2>
-      <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '4px' }}
-      >
-        {items.map((item) => (
-          <Item key={item} item={item} />
-        ))}
+      <div className={styles.section}>
+        <button onClick={onRemove}>Remove</button>
+        <input type="checkbox" defaultChecked={checked} />
       </div>
     </div>
   );
 };
 
-export default Demo;
+const ShoppingList = ({ children }) => {
+  const [items, setItems] = useState(ShoppingListData);
+
+  const removeItem = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+  };
+
+  return (
+    <div className={styles["shopping-list"]}>
+      <button
+        onClick={() => {
+          setItems([
+            ...items,
+            {
+              id: items.length > 0 ? items[items.length - 1].id + 1 : 0,
+              name: ItemsToAdd[Math.floor(Math.random() * ItemsToAdd.length)],
+              quantity: Math.round(Math.random() * 100),
+              checked: false,
+            },
+          ]);
+        }}
+      >
+        Add an items
+      </button>
+
+      <div className={styles["shopping-list-items"]}>
+        {children(items, removeItem)}
+      </div>
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <div>
+      <h2>No key</h2>
+      <ShoppingList>
+        {(items, removeItem) => (
+          <>
+            {items.map((item) => (
+              // eslint-disable-next-line react/jsx-key
+              <ShoppingItem
+                name={item.name}
+                quantity={item.quantity}
+                checked={item.checked}
+                onRemove={() => removeItem(item.id)}
+              />
+            ))}
+          </>
+        )}
+      </ShoppingList>
+
+      <h2 style={{ marginTop: 64 }}>Key</h2>
+      <ShoppingList>
+        {(items, removeItem) => (
+          <>
+            {items.map((item) => (
+              <ShoppingItem
+                key={item.id}
+                name={item.name}
+                quantity={item.quantity}
+                checked={item.checked}
+                onRemove={() => removeItem(item.id)}
+              />
+            ))}
+          </>
+        )}
+      </ShoppingList>
+    </div>
+  );
+};
+
+export default App;
