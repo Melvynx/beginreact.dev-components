@@ -8,7 +8,7 @@ const UserForm = ({ onSubmitUser }) => {
 
   return (
     // 🦁 ajoute onSubmit en passant la fonction handleSubmit
-    <form className="vertical-stack">
+    <form className="vertical-stack form">
       <label>
         Name
         <input type="text" name="name" />
@@ -24,7 +24,7 @@ const UserForm = ({ onSubmitUser }) => {
 
 const Form = () => {
   const onSubmitUser = (data) => {
-    alert('Form submitted: ' + JSON.stringify(data));
+    alert("Form submitted: " + JSON.stringify(data));
   };
   return <UserForm onSubmitUser={onSubmitUser} />;
 };

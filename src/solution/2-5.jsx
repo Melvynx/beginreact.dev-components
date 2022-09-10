@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-const vegetables = ['carrot', 'tomato', 'cucumber', 'pepper'];
+const vegetables = ["carrot", "tomato", "cucumber", "pepper"];
 
 const Item = ({ item }) => <input value={item} />;
 
@@ -26,7 +26,6 @@ function shuffle(array) {
 
 const Demo = () => {
   const [items, setItems] = useState(vegetables);
-  console.log(items);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,7 +42,11 @@ const Demo = () => {
     <div>
       <h2>Without key</h2>
       <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '4px' }}
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gridGap: "4px",
+        }}
       >
         {items.map((item) => (
           // eslint-disable-next-line react/jsx-key
@@ -52,7 +55,11 @@ const Demo = () => {
       </div>
       <h2>With key index</h2>
       <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '4px' }}
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gridGap: "4px",
+        }}
       >
         {items.map((item, index) => (
           <Item key={index} item={item} />
@@ -60,7 +67,11 @@ const Demo = () => {
       </div>
       <h2>With unique key</h2>
       <div
-        style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: '4px' }}
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gridGap: "4px",
+        }}
       >
         {items.map((item) => (
           <Item key={item} item={item} />

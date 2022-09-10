@@ -62,7 +62,7 @@ const App = (props) => {
   return (
     <div>
       <p>Hello</p>
-      <p>{props.isLoading && "Loading..."}</p>
+      {props.isLoading && <p>Loading...</p>}
     </div>
   );
 };
@@ -129,4 +129,4 @@ Regarde la vidéo solution après avoir fait ceci.
 Regarde juste la solution et place ton curseur dans les inputs puis attend et regarde
 comment React gère ton curseur en fonction des différents input.
 
-[📖 Pourquoi React à besoin de key]([📖 Comprendre les keys](https://beta.reactjs.org/learn/rendering-lists#filtering-arrays-of-items))
+[📖 Pourquoi React à besoin de key](https://beta.reactjs.org/learn/rendering-lists#why-does-react-need-keys)

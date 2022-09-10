@@ -23,6 +23,7 @@ import Solution2Exercise1 from "../solution/2-1";
 import Solution2Exercise2 from "../solution/2-2";
 import Solution2Exercise3 from "../solution/2-3";
 import Solution2Exercise4 from "../solution/2-4";
+import Solution2Exercise5 from "../solution/2-5";
 // Exercise 3
 import Solution3Exercise1 from "../solution/3-1";
 import Solution3Exercise2 from "../solution/3-2";
@@ -59,6 +60,7 @@ export const EXERCISES = [
         <Solution2Exercise2 key={2} />,
         <Solution2Exercise3 key={3} />,
         <Solution2Exercise4 key={4} />,
+        <Solution2Exercise5 key={5} />,
       ],
     },
   },

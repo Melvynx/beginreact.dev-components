@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 
 const UserForm = ({ onSubmitUser }) => {
   const [error, setError] = useState(null);
@@ -13,7 +13,7 @@ const UserForm = ({ onSubmitUser }) => {
     const password = passwordRef.current.value;
 
     if (password.length < 8) {
-      setError('Password must be at least 8 characters long');
+      setError("Password must be at least 8 characters long");
       return;
     }
 
@@ -25,7 +25,7 @@ const UserForm = ({ onSubmitUser }) => {
   };
 
   return (
-    <form className="vertical-stack" onSubmit={handleSubmit}>
+    <form className="vertical-stack form" onSubmit={handleSubmit}>
       <label htmlFor="name">
         Name
         <input ref={usernameRef} id="name" type="text" name="name" />
@@ -40,7 +40,7 @@ const UserForm = ({ onSubmitUser }) => {
           name="password"
         />
       </label>
-      {error && <p style={{ color: '#e74c3c' }}>{error}</p>}
+      {error && <p style={{ color: "#e74c3c" }}>{error}</p>}
       <input type="submit" value="Submit" />
     </form>
   );
@@ -48,7 +48,7 @@ const UserForm = ({ onSubmitUser }) => {
 
 const App = () => {
   const onSubmitUser = (data) => {
-    alert('Form submitted: ' + JSON.stringify(data));
+    alert("Form submitted: " + JSON.stringify(data));
   };
   return <UserForm onSubmitUser={onSubmitUser} />;
 };
