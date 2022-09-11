@@ -1,4 +1,5 @@
-import styles from '../styles/Exercise2.module.css';
+import clsx from "clsx";
+import styles from "../styles/Exercise2.module.css";
 
 const Header = () => (
   <header>
@@ -8,13 +9,13 @@ const Header = () => (
 );
 
 const shoppingItems = [
-  { name: 'Carotte', quantity: 12 },
-  { name: 'Patate', quantity: 11 },
-  { name: 'Haricot', quantity: 54 },
+  { name: "Carotte", quantity: 12 },
+  { name: "Patate", quantity: 11 },
+  { name: "Haricot", quantity: 54 },
 ];
 
 const ShoppingItem = (item) => (
-  <div className={styles['shopping-item']}>
+  <div className={clsx(styles["shopping-item"], styles["bg-paper"])}>
     <div className={styles.section}>
       <p>{item.name}</p>
       <p className={styles.badge}>{item.quantity}</p>
@@ -26,33 +27,37 @@ const ShoppingItem = (item) => (
 );
 
 const ShoppingList = () => (
-  <div className="flex flex-col gap-4">
+  <div className={clsx(styles["flex-col"])}>
     <h2>Liste de course</h2>
-    {shoppingItems.map((item) => (
-      <ShoppingItem key={item.name} {...item} />
-    ))}
+    <div className={styles["shopping-list-items"]}>
+      {shoppingItems.map((item) => (
+        <ShoppingItem key={item.name} {...item} />
+      ))}
+    </div>
   </div>
 );
 
 const recipes = [
-  { name: 'Tarte à la carotte', date: '11.06.22' },
-  { name: 'Purée de patate', date: '15.08.23' },
-  { name: 'Sauce au haricot', date: '22.09.24' },
+  { name: "Tarte à la carotte", date: "11.06.22" },
+  { name: "Purée de patate", date: "15.08.23" },
+  { name: "Sauce au haricot", date: "22.09.24" },
 ];
 
 const RecipeItem = (recipe) => (
-  <li className="flex gap-4">
+  <li className={clsx(styles["flex"], styles["gap-4"])}>
     <span>{recipe.name}</span>
     <p className={styles.badge}>{recipe.date}</p>
   </li>
 );
 
 const Recipes = () => (
-  <div className="flex flex-col gap-4">
+  <div className={clsx(styles["flex-col"])}>
     <h2>Liste de recette à faire</h2>
-    {recipes.map((recipe) => (
-      <RecipeItem key={recipe.name} {...recipe} />
-    ))}
+    <ul className={clsx(styles["flex-col"], styles["gap-2"])}>
+      {recipes.map((recipe) => (
+        <RecipeItem key={recipe.name} {...recipe} />
+      ))}
+    </ul>
   </div>
 );
 
@@ -64,7 +69,7 @@ const Footer = () => (
 
 const App = () => {
   return (
-    <div className="flex flex-col gap-8">
+    <div className={clsx(styles["container"])}>
       <Header />
       <hr />
       <ShoppingList />
