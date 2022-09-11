@@ -4,11 +4,13 @@ import styles from "../../styles/Exercise2.module.css";
 const App = () => {
   return (
     <div className={clsx(styles["flex-col"])}>
+      {/* 🦁 Crée un composant Header avec l'header ci-dessous. */}
       <header>
         <h1>Mes recettes de cuisine !</h1>
         <p>Par BeginReact.dev</p>
       </header>
       <hr />
+      {/* 🦁 Crée un composant ShoppingList avec les éléments ci-dessous. */}
       <div className={clsx(styles["flex-col"])}>
         <h2>Liste de course</h2>
         <div className={styles["shopping-list-items"]}>
@@ -42,6 +44,7 @@ const App = () => {
         </div>
       </div>
       <hr />
+      {/* 🦁 Crée un composant Recipes avec les éléments ci-dessous. */}
       <div className={clsx(styles["flex-col"])}>
         <h2>Liste de recettes à faire</h2>
         <ul className={clsx(styles["flex-col"], styles["gap-2"])}>
@@ -62,6 +65,7 @@ const App = () => {
         </ul>
       </div>
       <hr />
+      {/* 🦁 Crée un composant Footer avec le footer ci-dessous. */}
       <footer>
         <p>Create by BeginReact.dev</p>
       </footer>

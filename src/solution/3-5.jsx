@@ -16,16 +16,20 @@ const UserForm = ({ onSubmitUser }) => {
       <label htmlFor="password">
         Password
         <input
-          {...register("password", { minLength: 8 })}
+          {...register("password", {
+            minLength: {
+              value: 8,
+              message: "Password must be at least 8 characters long",
+            },
+            required: "Password is required !",
+          })}
           id="password"
           type="password"
           name="password"
         />
       </label>
       {errors.password && (
-        <p style={{ color: "#e74c3c" }}>
-          Password must be at least 8 characters long
-        </p>
+        <p style={{ color: "#e74c3c" }}>{errors.password.message}</p>
       )}
       <input type="submit" value="Submit" />
     </form>
