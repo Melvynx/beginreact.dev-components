@@ -3,7 +3,7 @@ import styles from "../../styles/Exercise2.module.css";
 
 const App = () => {
   return (
-    <div className={clsx(styles["flex-col"])}>
+    <div className={clsx(styles["container"])}>
       {/* 🦁 Crée un composant Header avec l'header ci-dessous. */}
       <header>
         <h1>Mes recettes de cuisine !</h1>
