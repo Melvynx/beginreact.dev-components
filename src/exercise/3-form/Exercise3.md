@@ -60,7 +60,7 @@ C'est quand tu définis une `value` à ton input. Dans ce cas, tu dois gérer en
 de l'input. Donc, quand il change, tu dois écouter le `onChange` event et update
 la valeur de l'input en fonction.
 
-[TODO: Mettre le lien de l'article de blog ici]()
+[Comment faire un formulaire en React ?](https://codelynx.dev/posts/les-formulaires-react)
 
 ```jsx
 const Input = () => {

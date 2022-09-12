@@ -5,7 +5,7 @@ Dans une application, on a très souvent des listes de données qu'on a envie d'
 Donc comment afficher cette liste par exemple ?
 
 ```js
-const vegetables = ["carrot", "tomato", "cucumber", "celery"];
+const vegetables = ['carrot', 'tomato', 'cucumber', 'celery'];
 ```
 
 La [beta documentation de React](https://beta.reactjs.org/learn/rendering-lists) explique très bien les listes.
@@ -15,7 +15,7 @@ Mais expliquer est une chose, pratiquer en est une autre.
 Comme React c'est du JSX, et donc du JS, pour parcourir une liste on utilise `.map`.
 
 ```js
-const vegetables = ["carrot", "tomato", "cucumber", "celery"];
+const vegetables = ['carrot', 'tomato', 'cucumber', 'celery'];
 
 const VegetablesList = () => {
   return (
@@ -77,7 +77,7 @@ const App = (props) => {
   return (
     <div>
       <p>Hello</p>
-      <p>{props.isLoading ? "Loading..." : props.children}</p>
+      <p>{props.isLoading ? 'Loading...' : props.children}</p>
     </div>
   );
 };
@@ -108,6 +108,9 @@ une quantité inférieure ou égale à 0.
 
 À la place de mettre cette condition dans le composant `ShoppingItem` ce
 qui n'est pas très propre, nous pouvons filtrer notre liste auparavant !
+
+Pour ça utilise Filter pour filter notre tableau en enlevant tous les items qui ont
+une quantité inférieure ou égale à 0. Avant le `.map`.
 
 [📖 Filtrer un tableau](https://beta.reactjs.org/learn/rendering-lists#filtering-arrays-of-items)
 

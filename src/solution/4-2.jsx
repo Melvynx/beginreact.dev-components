@@ -8,7 +8,7 @@ const Header = () => (
   </header>
 );
 
-const shoppingItems = [
+const SHOPPING_LIST = [
   { name: "Carotte", quantity: 12 },
   { name: "Patate", quantity: 11 },
   { name: "Haricot", quantity: 54 },
@@ -30,14 +30,14 @@ const ShoppingList = () => (
   <div className={clsx(styles["flex-col"])}>
     <h2>Liste de course</h2>
     <div className={styles["shopping-list-items"]}>
-      {shoppingItems.map((item) => (
+      {SHOPPING_LIST.map((item) => (
         <ShoppingItem key={item.name} {...item} />
       ))}
     </div>
   </div>
 );
 
-const recipes = [
+const RECIPIES = [
   { name: "Tarte à la carotte", date: "11.06.22" },
   { name: "Purée de patate", date: "15.08.23" },
   { name: "Sauce au haricot", date: "22.09.24" },
@@ -54,7 +54,7 @@ const Recipes = () => (
   <div className={clsx(styles["flex-col"])}>
     <h2>Liste de recette à faire</h2>
     <ul className={clsx(styles["flex-col"], styles["gap-2"])}>
-      {recipes.map((recipe) => (
+      {RECIPIES.map((recipe) => (
         <RecipeItem key={recipe.name} {...recipe} />
       ))}
     </ul>
