@@ -85,5 +85,5 @@ Donc fais attention à ne pas l'enlever !
   l'exercice que tu apprends mais aussi dans la vidéo correction associée.
 - ⚠️ Information importante à lire avant de faire l'exercice
 - 📖 Lien vers la documentation officielle
-- ℹ️ Petite information qui te permettent de
+- ℹ️ Petite information qui te permet de comprendre
 - 💣 Supprimer une ligne
