@@ -33,7 +33,7 @@ que je te propose ici.
 
 💌 Tu découvres le `useRef` dans son usage le plus basique avec un formulaire.
 
-## Extra 3 - Validate
+## Extra 3 - Validate errors
 
 Si tu as un champ que tu souhaites faire valider, tu peux utiliser un `state` pour le faire.
 
