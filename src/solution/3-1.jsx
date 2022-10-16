@@ -2,8 +2,9 @@ const UserForm = ({ onSubmitUser }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const username = event.target.name.value;
-    const password = event.target.password.value;
+    const form = event.currentTarget;
+    const username = form.name.value;
+    const password = form.password.value;
 
     onSubmitUser({ username, password });
   };
@@ -25,7 +26,7 @@ const UserForm = ({ onSubmitUser }) => {
 
 const App = () => {
   const onSubmitUser = (data) => {
-    alert("Form submitted: " + JSON.stringify(data));
+    alert('Form submitted: ' + JSON.stringify(data));
   };
   return <UserForm onSubmitUser={onSubmitUser} />;
 };
