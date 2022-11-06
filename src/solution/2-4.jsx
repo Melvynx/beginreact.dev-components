@@ -1,23 +1,23 @@
 // TODO : Delete this line
 // Faire un screen avant après avec CleanShopX
 
-import { useState } from "react";
-import styles from "../styles/Exercise2.module.css";
+import { useState } from 'react';
+import styles from '../styles/Exercise2.module.css';
 
 const ShoppingListData = [
-  { id: 1, name: "Milk", quantity: 2, checked: false },
-  { id: 2, name: "Eggs", quantity: 12, checked: true },
-  { id: 3, name: "Bread", quantity: 1, checked: false },
-  { id: 4, name: "Apple", quantity: 99, checked: false },
+  { id: 1, name: 'Milk', quantity: 2, checked: false },
+  { id: 2, name: 'Eggs', quantity: 12, checked: true },
+  { id: 3, name: 'Bread', quantity: 1, checked: false },
+  { id: 4, name: 'Apple', quantity: 99, checked: false },
 ];
 
-const ItemsToAdd = ["banana", "apple", "orange", "pear", "grape", "strawberry"];
+const ItemsToAdd = ['banana', 'apple', 'orange', 'pear', 'grape', 'strawberry'];
 
 const ShoppingItem = ({ name, quantity, checked, onRemove }) => {
   const [stateName] = useState(name);
 
   return (
-    <div className={styles["shopping-item"]}>
+    <div className={styles['shopping-item']}>
       <div className={styles.section}>
         <p>{stateName}</p>
         <p className={styles.badge}>{quantity}</p>
@@ -38,7 +38,7 @@ const ShoppingList = ({ children }) => {
   };
 
   return (
-    <div className={styles["shopping-list"]}>
+    <div className={styles['shopping-list']}>
       <button
         onClick={() => {
           setItems([
@@ -55,7 +55,7 @@ const ShoppingList = ({ children }) => {
         Add an items
       </button>
 
-      <div className={styles["shopping-list-items"]}>
+      <div className={styles['shopping-list-items']}>
         {children(items, removeItem)}
       </div>
     </div>

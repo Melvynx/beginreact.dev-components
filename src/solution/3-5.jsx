@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 
 const UserForm = ({ onSubmitUser }) => {
   const {
@@ -11,17 +11,17 @@ const UserForm = ({ onSubmitUser }) => {
     <form className="vertical-stack form" onSubmit={handleSubmit(onSubmitUser)}>
       <label htmlFor="name">
         Name
-        <input {...register("username")} id="name" type="text" name="name" />
+        <input {...register('username')} id="name" type="text" name="name" />
       </label>
       <label htmlFor="password">
         Password
         <input
-          {...register("password", {
+          {...register('password', {
             minLength: {
               value: 8,
-              message: "Password must be at least 8 characters long",
+              message: 'Password must be at least 8 characters long',
             },
-            required: "Password is required !",
+            required: 'Password is required !',
           })}
           id="password"
           type="password"
@@ -29,7 +29,7 @@ const UserForm = ({ onSubmitUser }) => {
         />
       </label>
       {errors.password && (
-        <p style={{ color: "#e74c3c" }}>{errors.password.message}</p>
+        <p style={{ color: '#e74c3c' }}>{errors.password.message}</p>
       )}
       <input type="submit" value="Submit" />
     </form>
@@ -38,7 +38,7 @@ const UserForm = ({ onSubmitUser }) => {
 
 const App = () => {
   const onSubmitUser = (data) => {
-    alert("Form submitted: " + JSON.stringify(data));
+    alert('Form submitted: ' + JSON.stringify(data));
   };
   return <UserForm onSubmitUser={onSubmitUser} />;
 };

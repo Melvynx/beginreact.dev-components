@@ -1,18 +1,18 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
-const Button = ({ variant = "primary", size = "large", children }) => {
+const Button = ({ variant = 'primary', size = 'large', children }) => {
   return (
     <button
       className={clsx(
-        "rounded",
+        'rounded',
         {
-          "bg-[#646cff]": variant === "primary",
-          "bg-green-600": variant === "secondary",
-          "bg-black": variant === "default",
+          'bg-[#646cff]': variant === 'primary',
+          'bg-green-600': variant === 'secondary',
+          'bg-black': variant === 'default',
         },
         {
-          "py-2 px-3 text-base": size === "small",
-          "py-3 px-6 text-lg": size === "large",
+          'py-2 px-3 text-base': size === 'small',
+          'py-3 px-6 text-lg': size === 'large',
         }
       )}
     >

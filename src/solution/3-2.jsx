@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 
 const UserForm = ({ onSubmitUser }) => {
   const usernameRef = useRef();
@@ -35,7 +35,7 @@ const UserForm = ({ onSubmitUser }) => {
 
 const App = () => {
   const onSubmitUser = (data) => {
-    alert("Form submitted: " + JSON.stringify(data));
+    alert('Form submitted: ' + JSON.stringify(data));
   };
   return <UserForm onSubmitUser={onSubmitUser} />;
 };

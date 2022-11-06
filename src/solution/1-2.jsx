@@ -1,25 +1,25 @@
-import "./1-2.css";
+import './1-2.css';
 
 const VariantsStyle = {
   primary: {
-    ["--background-color"]: "#646cff",
+    ['--background-color']: '#646cff',
   },
   secondary: {
-    ["--background-color"]: "#16a34a",
+    ['--background-color']: '#16a34a',
   },
   default: {
-    ["--background-color"]: "#171717",
+    ['--background-color']: '#171717',
   },
 };
 
 const SizesVariant = {
   small: {
-    ["--padding"]: "8px 16px",
-    ["--font-size"]: "1rem",
+    ['--padding']: '8px 16px',
+    ['--font-size']: '1rem',
   },
   large: {
-    ["--padding"]: "12px 24px",
-    ["--font-size"]: "1.2rem",
+    ['--padding']: '12px 24px',
+    ['--font-size']: '1.2rem',
   },
 };
 

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-const vegetables = ["carrot", "tomato", "cucumber", "pepper"];
+const vegetables = ['carrot', 'tomato', 'cucumber', 'pepper'];
 
 const Item = ({ item }) => <input value={item} />;
 
@@ -43,9 +43,9 @@ const Demo = () => {
       <h2>Without key</h2>
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gridGap: "4px",
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gridGap: '4px',
         }}
       >
         {items.map((item) => (
@@ -56,9 +56,9 @@ const Demo = () => {
       <h2>With key index</h2>
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gridGap: "4px",
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gridGap: '4px',
         }}
       >
         {items.map((item, index) => (
@@ -68,9 +68,9 @@ const Demo = () => {
       <h2>With unique key</h2>
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gridGap: "4px",
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gridGap: '4px',
         }}
       >
         {items.map((item) => (
